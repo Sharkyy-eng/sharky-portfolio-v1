@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sharky | Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Particle background */
+            canvas#bgCanvas {
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: #0f172a; /* Tailwind's gray-950 */
+            }
+        </style>
+    </head>
+    <body class="bg-gray-950 text-white font-sans">
+
+        <!-- Particle Background -->
+        <canvas id="bgCanvas"></canvas>
+
+        <!-- Navbar -->
+        <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
+            <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Site Under Continuous Learning~</h1>
+            <ul class="flex gap-6">
+                <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
+                <li><a href="projects.html" class="hover:text-cyan-400 transition">Projects</a></li>
+                <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="flex flex-col items-center justify-center text-center h-screen px-6">
+            <!-- <p class="text-lg text-gray-400">Hi, I’m</p> -->
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-cyan-400">
+                Sharavanan Mathivanan
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl">
+                Mechatronics & Artificial Intelligence Systems Engineer — engineering thoughts into reality
+                <!-- designing solutions that merge
+                hardware, software, and intelligence. -->
+            </p>
+            <div class="mt-8 flex gap-4">
+                <a href="projects.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
+                    View My Work
+                </a>
+                <a href="contact.html" class="px-6 py-3 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- Particle Script -->
+        <script>
+            const canvas = document.getElementById('bgCanvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // Create particles
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2 + 1,
+                    dx: (Math.random() - 0.5) * 0.5,
+                    dy: (Math.random() - 0.5) * 0.5
+                });
+            }
+
+            function drawParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0ff';
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    p.x += p.dx;
+                    p.y += p.dy;
+
+                    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+                });
+                requestAnimationFrame(drawParticles);
+            }
+            drawParticles();
+        </script>
+
+    </body>
+    </html>
