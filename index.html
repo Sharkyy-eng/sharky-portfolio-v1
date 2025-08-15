@@ -18,7 +18,7 @@
         <ul class="flex gap-6">
             <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
             <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
-            <li><a href="projects.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
             <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
         </ul>
     </nav>
@@ -33,7 +33,7 @@
             Mechatronics & Artificial Intelligence Systems Engineer — engineering thoughts into reality
         </p>
         <div class="mt-8 flex gap-4" id="heroButtons">
-            <a href="projects.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
+            <a href="projects1.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
                 View My Work
             </a>
             <a href="contact.html" class="px-6 py-3 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition">
@@ -59,7 +59,7 @@
                     <h3 id="popupTitle" class="text-2xl font-bold text-cyan-300 mb-2"></h3>
                     <p id="popupDesc" class="text-gray-300 mb-4"></p>
                 </div>
-                <button onclick="window.location.href='projects.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
+                <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
                     More Details
                 </button>
             </div>
@@ -129,20 +129,44 @@
         <h3 class="text-2xl font-bold text-cyan-300 text-center mb-8">Featured Projects</h3>
         <div class="flex justify-center">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center">
-                    <img src="assets/images/autonomous_robot.gif" alt="Autonomous Robot" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400">
-                    <span class="text-xl font-semibold text-cyan-300 mb-2">Autonomous Bus</span>
+                <!-- Autonomous Robot -->
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center group relative overflow-visible">
+                    <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
+                    <span class="text-xl font-semibold text-cyan-300 mb-2">Autonomous Robot</span>
                     <p class="text-gray-400 text-center">Navigates routes autonomously, detects bus stops, follows traffic lights, and more.</p>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 bg-opacity-90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <img src="assets/images/me.jpg" alt="Autonomous Robot GIF" class="w-40 h-40 rounded mb-4 object-cover border-2 border-cyan-400">
+                        <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
+                            More Details
+                        </button>
+                    </div>
                 </div>
-                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center">
-                    <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400">
+                <!-- Vision Mouse -->
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center group relative overflow-visible">
+                    <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
                     <span class="text-xl font-semibold text-cyan-300 mb-2">Vision Mouse</span>
                     <p class="text-gray-400 text-center">Vision-Mouse with automatic calibration—no manual tuning required.</p>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 bg-opacity-90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <img src="assets/images/vision_mouse_gif_placeholder.gif" alt="Vision Mouse GIF" class="w-40 h-40 rounded mb-4 object-cover border-2 border-cyan-400">
+                        <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
+                            More Details
+                        </button>
+                    </div>
                 </div>
-                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center">
-                    <img src="assets/images/weather_collector.gif" alt="Weather Collector" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400">
+                <!-- Weather Collector -->
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center group relative overflow-visible">
+                    <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
                     <span class="text-xl font-semibold text-cyan-300 mb-2">Weather Collector</span>
                     <p class="text-gray-400 text-center">IoT weather station powered by CyberPi.</p>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 bg-opacity-90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <img src="assets/images/weather_collector_gif_placeholder.gif" alt="Weather Collector GIF" class="w-40 h-40 rounded mb-4 object-cover border-2 border-cyan-400">
+                        <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
+                            More Details
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
