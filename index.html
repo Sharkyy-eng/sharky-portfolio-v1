@@ -1,100 +1,172 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sharky | Portfolio</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            /* Particle background */
-            canvas#bgCanvas {
-                position: fixed;
-                top: 0; left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                background: #0f172a; /* Tailwind's gray-950 */
-            }
-        </style>
-    </head>
-    <body class="bg-gray-950 text-white font-sans">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharky | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-950 text-white font-sans">
 
-        <!-- Particle Background -->
-        <canvas id="bgCanvas"></canvas>
+    <!-- Particle Background -->
+    <canvas id="bgCanvas"></canvas>
 
-        <!-- Navbar -->
-        <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
-            <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Site Under Continuous Learning~</h1>
-            <ul class="flex gap-6">
-                <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
-                <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
-                <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
-                <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
+        <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Site Under Continuous Learning~</h1>
+        <ul class="flex gap-6">
+            <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="projects.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- Hero Section -->
-        <section class="flex flex-col items-center justify-center text-center h-screen px-6">
-            <!-- <p class="text-lg text-gray-400">Hi, I’m</p> -->
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-cyan-400">
-                Sharavanan Mathivanan
-            </h2>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl">
-                Mechatronics & Artificial Intelligence Systems Engineer — engineering thoughts into reality
-                <!-- designing solutions that merge
-                hardware, software, and intelligence. -->
-            </p>
-            <div class="mt-8 flex gap-4">
-                <a href="projects1.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
-                    View My Work
-                </a>
-                <a href="contact.html" class="px-6 py-3 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition">
-                    Get In Touch
-                </a>
+    <!-- Hero Section -->
+    <section id="hero" class="flex flex-col items-center justify-center text-center h-screen px-6 transition-all duration-700">
+        <img src="assets/images/profile_bgr.jpg" alt="Profile" class="w-64 h-64 rounded-full mb-6 border-4 border-cyan-400 shadow-lg object-cover">
+        <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-cyan-400" id="nameText">
+            Sharavanan Mathivanan
+        </h2>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-2xl" id="descText">
+            Mechatronics & Artificial Intelligence Systems Engineer — engineering thoughts into reality
+        </p>
+        <div class="mt-8 flex gap-4" id="heroButtons">
+            <a href="projects.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
+                View My Work
+            </a>
+            <a href="contact.html" class="px-6 py-3 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition">
+                Get In Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Projects Scroller (hidden initially) -->
+    <div id="projectsScroller" class="fixed bottom-0 left-0 w-full bg-gray-900 py-8 px-4 flex items-center overflow-x-auto transition-all duration-700" style="display:none; z-index:10;">
+        <div id="scrollContent" class="flex items-center gap-16 animate-scroll-x">
+            <!-- Project cards will be injected here -->
+        </div>
+    </div>
+
+    <!-- Pop-up Modal -->
+    <div id="popupModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" style="display:none;">
+        <div class="bg-gray-900 rounded-lg shadow-xl p-8 relative flex flex-col md:flex-row gap-6 w-[90vw] max-w-2xl">
+            <button onclick="closePopup()" class="absolute top-4 left-4 text-gray-400 hover:text-cyan-400 text-2xl font-bold">&times;</button>
+            <img id="popupGif" src="" alt="Project Gif" class="rounded w-40 h-40 object-cover mb-4 md:mb-0">
+            <div class="flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 id="popupTitle" class="text-2xl font-bold text-cyan-300 mb-2"></h3>
+                    <p id="popupDesc" class="text-gray-300 mb-4"></p>
+                </div>
+                <button onclick="window.location.href='projects.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
+                    More Details
+                </button>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- Particle Script -->
-        <script>
-            const canvas = document.getElementById('bgCanvas');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
+    <!-- About Me Section -->
+    <section class="flex flex-col items-center justify-center text-center py-12">
+        <h3 class="text-2xl font-bold text-cyan-300 mb-2">About Me</h3>
+        <p class="text-gray-300 max-w-xl mb-4">
+            Hi, I'm Sharavanan Mathivanan, a second-year Mechatronics & AI Systems Engineering student at Western University in London, Canada. I'm passionate about building intelligent machines and software, and I enjoy solving real-world problems through robotics, automation, and coding.
+        </p>
+    </section>
 
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
+    <!-- Tech Info Trigger -->
+    <button id="techInfo-trigger" tabindex="0">Tech Info</button>
+    <!-- Tech Info Section -->
+    <div id="techInfo" class="absolute left-8 top-20 bg-gray-900 bg-opacity-80 rounded-lg p-4 shadow-lg text-left text-sm text-cyan-200" style="min-width: 260px;">
+        <h4 class="font-bold text-cyan-400 mb-2">Tech Info</h4>
+        <div id="techDetails">
+            Loading...
+        </div>
+    </div>
 
-            // Create particles
-            for (let i = 0; i < 80; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 2 + 1,
-                    dx: (Math.random() - 0.5) * 0.5,
-                    dy: (Math.random() - 0.5) * 0.5
-                });
-            }
+    <!-- Skills / Tech Stack -->
+    <section class="flex flex-col items-center py-8">
+        <h3 class="text-2xl font-bold text-cyan-300 mb-6">Skills & Tech Stack</h3>
+        <div class="flex flex-wrap justify-center gap-8">
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/python.svg" alt="Python" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">Python</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/arduino.svg" alt="Arduino" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">Arduino</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/javascript.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">JavaScript</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/html.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">HTML</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/css.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">CSS</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/java.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">Java</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/tensorflow.svg" alt="TensorFlow" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">TensorFlow</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="assets/icons/linux.svg" alt="Linux" class="w-12 h-12 mb-2">
+                <span class="text-cyan-200">Linux</span>
+            </div>
+            <!-- Add more skills as needed -->
+        </div>
+    </section>
 
-            function drawParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#0ff';
-                particles.forEach(p => {
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fill();
-                    p.x += p.dx;
-                    p.y += p.dy;
+    <!-- Featured Projects -->
+    <section class="py-12">
+        <h3 class="text-2xl font-bold text-cyan-300 text-center mb-8">Featured Projects</h3>
+        <div class="flex justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center">
+                    <img src="assets/images/autonomous_robot.gif" alt="Autonomous Robot" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400">
+                    <span class="text-xl font-semibold text-cyan-300 mb-2">Autonomous Bus</span>
+                    <p class="text-gray-400 text-center">Navigates routes autonomously, detects bus stops, follows traffic lights, and more.</p>
+                </div>
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center">
+                    <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400">
+                    <span class="text-xl font-semibold text-cyan-300 mb-2">Vision Mouse</span>
+                    <p class="text-gray-400 text-center">Vision-Mouse with automatic calibration—no manual tuning required.</p>
+                </div>
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center">
+                    <img src="assets/images/weather_collector.gif" alt="Weather Collector" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400">
+                    <span class="text-xl font-semibold text-cyan-300 mb-2">Weather Collector</span>
+                    <p class="text-gray-400 text-center">IoT weather station powered by CyberPi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-                    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-                });
-                requestAnimationFrame(drawParticles);
-            }
-            drawParticles();
-        </script>
+    <!-- Animated Stats
+    <section class="flex flex-col items-center py-12">
+        <h3 class="text-2xl font-bold text-cyan-300 mb-6">Stats</h3>
+        <div class="flex gap-12">
+            <div class="flex flex-col items-center">
+                <span class="text-5xl font-extrabold text-cyan-400" id="stat-projects">0</span>
+                <span class="text-gray-300 mt-2">Projects</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-5xl font-extrabold text-cyan-400" id="stat-years">0</span>
+                <span class="text-gray-300 mt-2">Years Experience</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-5xl font-extrabold text-cyan-400" id="stat-awards">0</span>
+                <span class="text-gray-300 mt-2">Awards</span>
+            </div>
+        </div>
+    </section> -->
 
-    </body>
-    </html>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

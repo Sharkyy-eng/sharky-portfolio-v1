@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Projects | Sharky</title>
+    <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+    <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
+        <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">Software Projects</h1>
+        <ul class="flex gap-6">
+            <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="projects.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="px-6 py-12">
+        <button onclick="window.location.href='projects.html'" class="mb-8 px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
+            ← Back to Projects
+        </button>
+        <h2 class="text-4xl font-bold text-center text-cyan-400 mb-10">Software Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
+            <!-- Vision Mouse -->
+            <div class="bg-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center">
+                <img src="assets/images/vision_mouse.gif" alt="Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover">
+                <span class="text-xl font-semibold text-cyan-300 mb-2">Vision Mouse</span>
+                <p class="text-gray-400 text-center">Vision-Mouse with automatic calibration—no manual tuning required.</p>
+            </div>
+            <!-- Advanced Vision Mouse -->
+            <div class="bg-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center">
+                <img src="assets/images/advanced_vision_mouse.gif" alt="Advanced Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover">
+                <span class="text-xl font-semibold text-cyan-300 mb-2">Advanced Vision Mouse</span>
+                <p class="text-gray-400 text-center">Enhanced Vision-Mouse with improved accuracy and advanced gesture controls.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

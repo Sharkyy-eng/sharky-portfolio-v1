@@ -1,0 +1,76 @@
+/* Particle background */
+canvas#bgCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #0f172a; /* Tailwind's gray-950 */
+}
+.animate-scroll-x {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-x 40s linear infinite;
+}
+@keyframes scroll-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.bg-gray-900.rounded-lg.shadow-lg.p-6 {
+    width: 20rem; /* Match your projects.html card width */
+    min-width: 20rem;
+}
+.project-scroll-card {
+    background: #1e293b;
+    border: 4px solid #22d3ee;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,255,255,0.15);
+    padding: 1.5rem;
+    min-width: 22rem;
+    width: 22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s;
+}
+.project-scroll-card:hover {
+    box-shadow: 0 8px 32px #22d3ee80;
+}
+.project-scroll-card img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    border: 3px solid #38bdf8;
+    margin-bottom: 1rem;
+}
+.project-scroll-card span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #22d3ee;
+    margin-bottom: 0.5rem;
+}
+#projectsScroller {
+    overflow: hidden !important;
+}
+#techInfo {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+#techInfo:hover,
+#techInfo:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+}
+#techInfo-trigger {
+    position: absolute;
+    left: 8px;
+    top: 80px;
+    z-index: 20;
+    color: #22d3ee;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
