@@ -5,17 +5,116 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Sharky</title>
-    <script src = 'https://cdn.tailwindcss.com'></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-950 text-white flex items-center justify-center h-screen font-sans">
+<body class="bg-gray-950 text-white font-sans">
 
-    <div class="text-center">
-        <h1 class="text-4xl font-bold text-cyan-400 mb-4">🚧 Page Under Construction 🚧</h1>
-        <p class="text-gray-300 text-lg mb-6">This section is currently being built. Please check back soon!</p>
-        <a href="index.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
-            Return to Home
-        </a>
-    </div>
+    <!-- Particle Background -->
+    <canvas id="bgCanvas"></canvas>
 
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
+        <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Get In Touch~</h1>
+        <ul class="flex gap-6">
+            <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-cyan-400 transition">Blogs</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Let's Connect</h1>
+            <p class="text-gray-300 text-lg">Have a project in mind or just want to chat? I'd love to hear from you!</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="glass-effect rounded-xl p-8 animate-fade-in-up">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-6">Send Me a Message</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-300 mb-2">Name</label>
+                        <input type="text" placeholder="Your name" class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-300 transition">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">Email</label>
+                        <input type="email" placeholder="your@email.com" class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-300 transition">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">Subject</label>
+                        <input type="text" placeholder="What's this about?" class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-300 transition">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">Message</label>
+                        <textarea rows="5" placeholder="Your message..." class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-300 transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <!-- Email -->
+                <div class="glass-effect rounded-xl p-6 animate-fade-in-up" style="animation-delay: 0.1s">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Email</h3>
+                    <p class="text-gray-300 mb-3">Reach out via email for any inquiries or project discussions.</p>
+                    <a href="mailto:sharavan.mathivanan@gmail.com" class="text-cyan-400 hover:text-cyan-300 transition font-semibold text-lg">sharavan.mathivanan@gmail.com</a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="glass-effect rounded-xl p-6 animate-fade-in-up" style="animation-delay: 0.2s">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">LinkedIn</h3>
+                    <p class="text-gray-300 mb-3">Connect with me professionally on LinkedIn to stay updated with my work.</p>
+                    <a href="https://www.linkedin.com/in/sharavanan-mathivanan/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition font-semibold text-lg">Visit Profile →</a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="glass-effect rounded-xl p-6 animate-fade-in-up" style="animation-delay: 0.3s">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">GitHub</h3>
+                    <p class="text-gray-300 mb-3">Check out my repositories and open-source contributions.</p>
+                    <a href="https://github.com" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition font-semibold text-lg">View Repository →</a>
+                </div>
+
+                <!-- Location -->
+                <div class="glass-effect rounded-xl p-6 animate-fade-in-up" style="animation-delay: 0.4s">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Location</h3>
+                    <p class="text-gray-300">London, Ontario, Canada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center">Why Work With Me?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-xl p-6 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Full-Stack Thinker</h3>
+                    <p class="text-gray-300">I combine hardware knowledge with software expertise to create complete, integrated solutions.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Problem Solver</h3>
+                    <p class="text-gray-300">I approach challenges systematically, breaking down complex problems into manageable solutions.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Quick Learner</h3>
+                    <p class="text-gray-300">I'm constantly expanding my skillset and staying updated with the latest technologies in AI and robotics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

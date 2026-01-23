@@ -19,24 +19,25 @@
             <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
             <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
             <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-cyan-400 transition">Blogs</a></li>
             <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="flex flex-col items-center justify-center text-center h-screen px-6 transition-all duration-700">
-        <img src="assets/images/profile_bgr.jpg" alt="Profile" class="w-64 h-64 rounded-full mb-6 border-4 border-cyan-400 shadow-lg object-cover">
-        <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-cyan-400" id="nameText">
+        <img src="assets/images/profile_bgr.jpg" alt="Profile" class="w-64 h-64 rounded-full mb-6 border-4 border-cyan-400 shadow-2xl object-cover animate-float">
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent animate-fade-in" id="nameText">
             Sharavanan Mathivanan
         </h2>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-2xl" id="descText">
+        <p class="text-xl md:text-2xl text-gray-300 max-w-2xl animate-fade-in-delay" id="descText">
             Mechatronics & Artificial Intelligence Systems Engineer — engineering thoughts into reality
         </p>
-        <div class="mt-8 flex gap-4" id="heroButtons">
-            <a href="projects1.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
+        <div class="mt-8 flex gap-4 animate-fade-in-delay-2" id="heroButtons">
+            <a href="projects1.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
                 View My Work
             </a>
-            <a href="contact.html" class="px-6 py-3 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition">
+            <a href="contact.html" class="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
                 Get In Touch
             </a>
         </div>
@@ -67,70 +68,82 @@
     </div>
 
     <!-- About Me Section -->
-    <section class="flex flex-col items-center justify-center text-center py-12">
-        <h3 class="text-2xl font-bold text-cyan-300 mb-2">About Me</h3>
-        <p class="text-gray-300 max-w-xl mb-4">
-            Hi, I'm Sharavanan Mathivanan, a second-year Mechatronics & AI Systems Engineering student at Western University in London, Canada. I'm passionate about building intelligent machines and software, and I enjoy solving real-world problems through robotics, automation, and coding.
-        </p>
+    <section id="about" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/10 to-blue-900/10 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8 text-center animate-fade-in-up">About Me</h2>
+            <div class="glass-effect rounded-xl p-8 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 animate-fade-in-up-delay">
+                <p class="text-gray-200 text-lg leading-relaxed mb-4">
+                    Hi, I'm Sharavanan Mathivanan, a second-year Mechatronics & AI Systems Engineering student at Western University in London, Canada.
+                </p>
+                <p class="text-gray-200 text-lg leading-relaxed">
+                    I'm passionate about building intelligent machines and software, and I enjoy solving real-world problems through robotics, automation, and coding. With hands-on experience in both hardware and software, I bridge the gap between mechanical systems and intelligent solutions.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <!-- Tech Info Trigger -->
-    <button id="techInfo-trigger" tabindex="0">Tech Info</button>
-    <!-- Tech Info Section -->
-    <div id="techInfo" class="absolute left-8 top-20 bg-gray-900 bg-opacity-80 rounded-lg p-4 shadow-lg text-left text-sm text-cyan-200" style="min-width: 260px;">
-        <h4 class="font-bold text-cyan-400 mb-2">Tech Info</h4>
-        <div id="techDetails">
-            Loading...
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Experience</h2>
+            <div class="space-y-6">
+                <!-- Experience Item -->
+                <div class="glass-effect rounded-xl p-6 shadow-lg border-l-4 border-cyan-400 hover:shadow-cyan-500/30 hover:translate-x-2 transition-all duration-300 animate-fade-in-up">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-300">Mechatronics & AI Systems Engineering</h3>
+                            <p class="text-cyan-200">Western University, London, Canada</p>
+                        </div>
+                        <span class="text-gray-400">2nd Year</span>
+                    </div>
+                    <p class="text-gray-300 mt-3">
+                        Building expertise in robotics, automation, and intelligent systems with hands-on projects in control systems, computer vision, and embedded programming.
+                    </p>
+                </div>
+                
+                <!-- Experience Item -->
+                <div class="glass-effect rounded-xl p-6 shadow-lg border-l-4 border-blue-400 hover:shadow-cyan-500/30 hover:translate-x-2 transition-all duration-300 animate-fade-in-up-delay">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-300">Robotics & Automation Projects</h3>
+                            <p class="text-cyan-200">Personal & Academic Work</p>
+                        </div>
+                        <span class="text-gray-400">Ongoing</span>
+                    </div>
+                    <p class="text-gray-300 mt-3">
+                        Developing autonomous systems, IoT solutions, and computer vision applications. Experience with Arduino, Python, Java, and machine learning frameworks.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Skills / Tech Stack -->
-    <section class="flex flex-col items-center py-8">
-        <h3 class="text-2xl font-bold text-cyan-300 mb-6">Skills & Tech Stack</h3>
-        <div class="flex flex-wrap justify-center gap-8">
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/python.svg" alt="Python" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">Python</span>
+    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-cyan-900/10 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Skills & Tech Stack</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="skill-card animate-fade-in-up"><img src="assets/icons/python.svg" alt="Python" class="w-16 h-16 mb-3"><span>Python</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.1s"><img src="assets/icons/arduino.svg" alt="Arduino" class="w-16 h-16 mb-3"><span>Arduino</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.2s"><img src="assets/icons/javascript.svg" alt="JavaScript" class="w-16 h-16 mb-3"><span>JavaScript</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.3s"><img src="assets/icons/html.svg" alt="HTML" class="w-16 h-16 mb-3"><span>HTML</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.4s"><img src="assets/icons/css.svg" alt="CSS" class="w-16 h-16 mb-3"><span>CSS</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.5s"><img src="assets/icons/java.svg" alt="Java" class="w-16 h-16 mb-3"><span>Java</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.6s"><img src="assets/icons/tensorflow.svg" alt="TensorFlow" class="w-16 h-16 mb-3"><span>TensorFlow</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.7s"><img src="assets/icons/linux.svg" alt="Linux" class="w-16 h-16 mb-3"><span>Linux</span></div>
             </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/arduino.svg" alt="Arduino" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">Arduino</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/javascript.svg" alt="JavaScript" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">JavaScript</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/html.svg" alt="JavaScript" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">HTML</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/css.svg" alt="JavaScript" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">CSS</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/java.svg" alt="JavaScript" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">Java</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/tensorflow.svg" alt="TensorFlow" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">TensorFlow</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="assets/icons/linux.svg" alt="Linux" class="w-12 h-12 mb-2">
-                <span class="text-cyan-200">Linux</span>
-            </div>
-            <!-- Add more skills as needed -->
         </div>
     </section>
 
     <!-- Featured Projects -->
-    <section class="py-12">
-        <h3 class="text-2xl font-bold text-cyan-300 text-center mb-8">Featured Projects</h3>
-        <div class="flex justify-center">
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Autonomous Robot -->
-                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center group relative overflow-visible">
+                <div class="glass-effect rounded-xl shadow-lg p-6 flex flex-col items-center group relative overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
                     <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
                     <span class="text-xl font-semibold text-cyan-300 mb-2">Autonomous Robot</span>
                     <p class="text-gray-400 text-center">Navigates routes autonomously, detects bus stops, follows traffic lights, and more.</p>
@@ -143,7 +156,7 @@
                     </div>
                 </div>
                 <!-- Vision Mouse -->
-                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center group relative overflow-visible">
+                <div class="glass-effect rounded-xl shadow-lg p-6 flex flex-col items-center group relative overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
                     <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
                     <span class="text-xl font-semibold text-cyan-300 mb-2">Vision Mouse</span>
                     <p class="text-gray-400 text-center">Vision-Mouse with automatic calibration—no manual tuning required.</p>
@@ -155,8 +168,8 @@
                         </button>
                     </div>
                 </div>
-                <!-- Weather Collector -->
-                <div class="bg-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center group relative overflow-visible">
+                <!-- Weather Collector cyberPi-->
+                <div class="glass-effect rounded-xl shadow-lg p-6 flex flex-col items-center group relative overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s">
                     <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
                     <span class="text-xl font-semibold text-cyan-300 mb-2">Weather Collector</span>
                     <p class="text-gray-400 text-center">IoT weather station powered by CyberPi.</p>
@@ -169,27 +182,86 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-12">
+                <a href="projects1.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
+                    View All Projects
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Animated Stats
-    <section class="flex flex-col items-center py-12">
-        <h3 class="text-2xl font-bold text-cyan-300 mb-6">Stats</h3>
-        <div class="flex gap-12">
-            <div class="flex flex-col items-center">
-                <span class="text-5xl font-extrabold text-cyan-400" id="stat-projects">0</span>
-                <span class="text-gray-300 mt-2">Projects</span>
+    <!-- Blogs Section -->
+    <section id="blogs" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/10 to-blue-900/10 pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Latest Blog Posts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Blog Card 1 -->
+                <div class="glass-effect rounded-xl shadow-lg p-6 hover:shadow-cyan-500/50 hover:translate-y-minus-2 transition-all duration-300 animate-fade-in-up">
+                    <div class="mb-4">
+                        <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Robotics</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Building an Autonomous Robot</h3>
+                    <p class="text-gray-300 mb-4">
+                        A deep dive into the development process of creating an autonomous robot that can navigate complex environments and make intelligent decisions.
+                    </p>
+                    <a href="blogs.html" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">Read More →</a>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="glass-effect rounded-xl shadow-lg p-6 hover:shadow-cyan-500/50 hover:translate-y-minus-2 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="mb-4">
+                        <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Computer Vision</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Vision-Based Mouse Control with MediaPipe</h3>
+                    <p class="text-gray-300 mb-4">
+                        Exploring eye-tracking technology and how to implement gesture recognition for hands-free computer control using MediaPipe and Python.
+                    </p>
+                    <a href="blogs.html" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">Read More →</a>
+                </div>
             </div>
-            <div class="flex flex-col items-center">
-                <span class="text-5xl font-extrabold text-cyan-400" id="stat-years">0</span>
-                <span class="text-gray-300 mt-2">Years Experience</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <span class="text-5xl font-extrabold text-cyan-400" id="stat-awards">0</span>
-                <span class="text-gray-300 mt-2">Awards</span>
+            <div class="text-center mt-12">
+                <a href="blogs.html" class="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
+                    View All Articles
+                </a>
             </div>
         </div>
-    </section> -->
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-6 relative overflow-hidden">
+        <div class="max-w-2xl mx-auto glass-effect rounded-xl p-12 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
+            <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Let's Work Together</h2>
+            <p class="text-gray-200 mb-6 text-lg">
+                Interested in collaborating on a project? I'd love to hear about your ideas and how I can help bring them to life.
+            </p>
+            <a href="contact.html" class="px-10 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 inline-block">
+                Get In Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Animated Stats -->
+    <section class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-cyan-900/10 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-16 text-center animate-fade-in-up">By The Numbers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-xl p-8 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
+                    <span class="text-6xl font-extrabold text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text" id="stat-projects">8+</span>
+                    <p class="text-gray-300 mt-4 text-lg">Projects Completed</p>
+                </div>
+                <div class="glass-effect rounded-xl p-8 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
+                    <span class="text-6xl font-extrabold text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text" id="stat-years">2+</span>
+                    <p class="text-gray-300 mt-4 text-lg">Years Experience</p>
+                </div>
+                <div class="glass-effect rounded-xl p-8 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s">
+                    <span class="text-6xl font-extrabold text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text" id="stat-awards">10+</span>
+                    <p class="text-gray-300 mt-4 text-lg">Technologies</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="assets/js/main.js"></script>
 </body>

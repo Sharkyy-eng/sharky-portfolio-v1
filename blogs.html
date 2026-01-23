@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | Sharky</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+    <!-- Particle Background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
+        <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Sharky's Blog~</h1>
+        <ul class="flex gap-6">
+            <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-cyan-400 transition">Blogs</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Blog Posts Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4 text-center">Latest Blog Posts</h1>
+            <p class="text-gray-300 text-center mb-16 text-lg">Exploring robotics, AI, and engineering through detailed technical write-ups.</p>
+
+            <div class="space-y-8">
+                <!-- Blog Post 1 -->
+                <article class="glass-effect rounded-xl p-8 hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Robotics</span>
+                        </div>
+                        <time class="text-gray-400 text-sm">January 10, 2026</time>
+                    </div>
+                    <h2 class="text-3xl font-bold text-cyan-300 mb-3">Building an Autonomous Robot</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        A deep dive into the development process of creating an autonomous robot that can navigate complex environments and make intelligent decisions. Learn about the hardware selection, sensor integration, and software algorithms that power modern autonomous systems. In this comprehensive guide, I'll walk you through the challenges we faced during development and the innovative solutions we implemented to overcome them.
+                    </p>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Arduino</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Computer Vision</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Path Planning</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition font-semibold inline-block">Continue Reading →</a>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="glass-effect rounded-xl p-8 hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Computer Vision</span>
+                        </div>
+                        <time class="text-gray-400 text-sm">January 5, 2026</time>
+                    </div>
+                    <h2 class="text-3xl font-bold text-cyan-300 mb-3">Vision-Based Mouse Control with MediaPipe</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Exploring eye-tracking technology and how to implement gesture recognition for hands-free computer control using MediaPipe and Python. This project demonstrates the power of modern machine learning libraries in creating intuitive human-computer interfaces. Discover how computer vision can be leveraged to create accessibility tools and innovative interaction methods.
+                    </p>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">MediaPipe</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Eye Tracking</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition font-semibold inline-block">Continue Reading →</a>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="glass-effect rounded-xl p-8 hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">IoT</span>
+                        </div>
+                        <time class="text-gray-400 text-sm">December 28, 2025</time>
+                    </div>
+                    <h2 class="text-3xl font-bold text-cyan-300 mb-3">IoT Weather Station with CyberPi</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Learn how to build a smart weather station using CyberPi and various sensors to collect, process, and visualize environmental data. This project combines hardware prototyping with cloud connectivity to create a real-time weather monitoring system. Understand the complete workflow from sensor calibration to data visualization and analysis.
+                    </p>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">CyberPi</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">IoT</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Sensors</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition font-semibold inline-block">Continue Reading →</a>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="glass-effect rounded-xl p-8 hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">AI/ML</span>
+                        </div>
+                        <time class="text-gray-400 text-sm">December 20, 2025</time>
+                    </div>
+                    <h2 class="text-3xl font-bold text-cyan-300 mb-3">Machine Learning in Robotics</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Integrating TensorFlow and machine learning models into robotic systems to enable adaptive behavior and intelligent decision-making. Explore how neural networks can be deployed on embedded systems and the challenges of real-time inference on resource-constrained hardware. This post covers model optimization, quantization, and practical implementation strategies.
+                    </p>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">TensorFlow</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">ML</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Robotics</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition font-semibold inline-block">Continue Reading →</a>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="glass-effect rounded-xl p-8 hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.4s">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Hardware</span>
+                        </div>
+                        <time class="text-gray-400 text-sm">December 15, 2025</time>
+                    </div>
+                    <h2 class="text-3xl font-bold text-cyan-300 mb-3">Maze Solving Robot with Arduino</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Detailed walkthrough of building a maze-solving robot using Arduino Mega and ultrasonic sensors. This project showcases embedded systems programming, sensor integration, and algorithm design. Learn about wall-following algorithms, sensor calibration, and debugging techniques for autonomous systems.
+                    </p>
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Arduino</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Sensors</span>
+                        <span class="text-xs text-cyan-200 bg-gray-800 px-2 py-1 rounded">Algorithms</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition font-semibold inline-block">Continue Reading →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-2xl mx-auto glass-effect rounded-xl p-12 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
+            <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Stay Updated</h2>
+            <p class="text-gray-200 mb-6 text-lg">
+                Subscribe to get notified when new articles are published.
+            </p>
+            <div class="flex gap-2">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 bg-gray-900 border border-cyan-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400">
+                <button class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg hover:shadow-cyan-500/50 transition-all duration-300">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

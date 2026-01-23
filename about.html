@@ -5,17 +5,180 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About | Sharky</title>
-    <script src = 'https://cdn.tailwindcss.com'></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-950 text-white flex items-center justify-center h-screen font-sans">
+<body class="bg-gray-950 text-white font-sans">
 
-    <div class="text-center">
-        <h1 class="text-4xl font-bold text-cyan-400 mb-4">🚧 Page Under Construction 🚧</h1>
-        <p class="text-gray-300 text-lg mb-6">This section is currently being built. Please check back soon!</p>
-        <a href="index.html" class="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition">
-            Return to Home
-        </a>
-    </div>
+    <!-- Particle Background -->
+    <canvas id="bgCanvas"></canvas>
 
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 py-4 bg-gray-900 shadow-lg">
+        <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Sharky's Story~</h1>
+        <ul class="flex gap-6">
+            <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="blogs.html" class="hover:text-cyan-400 transition">Blogs</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8 text-center">About Me</h1>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Introduction -->
+            <div class="glass-effect rounded-xl p-8 mb-12 animate-fade-in-up">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-4">Who I Am</h2>
+                <p class="text-gray-200 text-lg leading-relaxed mb-4">
+                    Hello! I'm Sharavanan Mathivanan, a passionate second-year Mechatronics & AI Systems Engineering student at Western University in London, Canada. My journey in engineering is driven by a fascination with bridging the gap between mechanical systems and intelligent software solutions.
+                </p>
+                <p class="text-gray-200 text-lg leading-relaxed">
+                    I thrive on turning complex problems into elegant solutions through robotics, automation, and artificial intelligence. Whether it's designing autonomous systems, implementing computer vision algorithms, or developing IoT applications, I'm committed to creating technology that makes a real-world impact.
+                </p>
+            </div>
+
+            <!-- My Journey -->
+            <div class="glass-effect rounded-xl p-8 mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-4">My Journey</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-200 text-lg leading-relaxed">
+                        My passion for engineering started early, but it truly crystallized when I discovered the intersection of mechanics and artificial intelligence. Throughout my academic journey, I've worked on diverse projects ranging from hardware prototyping to machine learning implementation.
+                    </p>
+                    <p class="text-gray-200 text-lg leading-relaxed">
+                        What excites me most is the challenge of bringing ideas to life—whether that's an autonomous robot navigating a complex environment, software that interprets human gestures, or IoT systems collecting real-time environmental data. Each project teaches me something new about engineering, problem-solving, and innovation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="glass-effect rounded-xl p-8 mb-12 animate-fade-in-up" style="animation-delay: 0.2s">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-6">Professional Experience</h2>
+                <div class="space-y-6">
+                    <!-- Experience 1 -->
+                    <div class="border-l-4 border-cyan-400 pl-6 pb-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-cyan-300">CV and AI Application Intern</h3>
+                                <p class="text-cyan-200">MAANTT Global Services</p>
+                            </div>
+                            <span class="text-gray-400 text-sm">May 2025 - Aug 2025</span>
+                        </div>
+                        <ul class="text-gray-300 space-y-2 list-disc list-inside">
+                            <li>Developed an AI proctoring engine with object detection, pose estimation, audio analysis, and multi-person tracking using Python, TensorFlow, and MediaPipe</li>
+                            <li>Achieved 90% detection accuracy and scaled system to monitor 50+ candidates per session</li>
+                            <li>Automated proctoring workflow and improved system reliability through collaboration with course administrators</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="border-l-4 border-blue-400 pl-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-blue-300">Robot Designer and Trainer</h3>
+                                <p class="text-blue-200">MEBOT Robotics</p>
+                            </div>
+                            <span class="text-gray-400 text-sm">Mar 2024 - Aug 2024</span>
+                        </div>
+                        <ul class="text-gray-300 space-y-2 list-disc list-inside">
+                            <li>Designed and built educational robots; created training curriculum for students aged 8-15</li>
+                            <li>Delivered product demos to industry and academic clients, showcasing technical and communication skills</li>
+                            <li>Applied project management and programming to lead hands-on learning sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills & Expertise -->
+            <div class="glass-effect rounded-xl p-8 mb-12 animate-fade-in-up" style="animation-delay: 0.3s">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-6">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-200 mb-3">Programming Languages</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Python (Primary)</li>
+                            <li>✓ Java</li>
+                            <li>✓ JavaScript</li>
+                            <li>✓ C/C++</li>
+                            <li>✓ Arduino</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-200 mb-3">Robotics & Hardware</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Arduino & Embedded Systems</li>
+                            <li>✓ Sensor Integration</li>
+                            <li>✓ Control Systems</li>
+                            <li>✓ IoT Development</li>
+                            <li>✓ CyberPi</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-200 mb-3">AI & Machine Learning</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ TensorFlow</li>
+                            <li>✓ Computer Vision (MediaPipe, OpenCV)</li>
+                            <li>✓ Neural Networks</li>
+                            <li>✓ Data Analysis</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-200 mb-3">Tools & Technologies</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✓ Linux/Git</li>
+                            <li>✓ Web Development (HTML/CSS/JS)</li>
+                            <li>✓ CAD Design</li>
+                            <li>✓ MATLAB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="glass-effect rounded-xl p-8 mb-12 animate-fade-in-up" style="animation-delay: 0.4s">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-6">Education</h2>
+                <div class="border-l-4 border-cyan-400 pl-6">
+                    <h3 class="text-xl font-semibold text-cyan-300">Mechatronics & AI Systems Engineering</h3>
+                    <p class="text-cyan-200">Western University, London, Canada</p>
+                    <p class="text-gray-400">2nd Year | Expected Graduation: 2026</p>
+                    <p class="text-gray-300 mt-2">Focused on robotics, automation, control systems, and intelligent systems design. Completed coursework in embedded systems, computer vision, and machine learning.</p>
+                </div>
+            </div>
+
+            <!-- Interests & Philosophy -->
+            <div class="glass-effect rounded-xl p-8 animate-fade-in-up" style="animation-delay: 0.5s">
+                <h2 class="text-3xl font-bold text-cyan-300 mb-4">My Philosophy</h2>
+                <p class="text-gray-200 text-lg leading-relaxed mb-4">
+                    I believe the future belongs to engineers who can think across disciplines—combining mechanical engineering, software development, and artificial intelligence to create solutions that are not just technically sound but also practical and impactful.
+                </p>
+                <p class="text-gray-200 text-lg leading-relaxed">
+                    I'm constantly learning, challenging myself with new technologies, and collaborating with others to push the boundaries of what's possible. When I'm not coding or building robots, you'll find me exploring new AI applications or contributing to open-source projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900">
+        <div class="max-w-2xl mx-auto glass-effect rounded-xl p-12 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
+            <h2 class="text-3xl font-bold text-cyan-300 mb-4">Let's Connect</h2>
+            <p class="text-gray-200 mb-6">
+                Interested in collaborating or learning more about my work? Feel free to reach out!
+            </p>
+            <a href="contact.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 inline-block">
+                Contact Me
+            </a>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
