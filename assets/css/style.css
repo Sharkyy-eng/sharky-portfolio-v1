@@ -8,6 +8,206 @@ canvas#bgCanvas {
     background: #0f172a; /* Tailwind's gray-950 */
 }
 
+/* ============ LIGHT MODE SUPPORT ============ */
+body.light-mode {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+body.light-mode canvas#bgCanvas {
+    background: #f3f4f6 !important;
+}
+
+body.light-mode nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+body.light-mode nav .text-cyan-400,
+body.light-mode nav .text-cyan-300 {
+    color: #0891b2 !important;
+}
+
+body.light-mode nav .text-white {
+    color: #1f2937 !important;
+}
+
+body.light-mode nav a:hover {
+    color: #0891b2 !important;
+}
+
+body.light-mode section {
+    background-color: #ffffff !important;
+}
+
+body.light-mode .bg-gradient-to-b {
+    background-image: linear-gradient(to bottom, rgba(15, 164, 206, 0.03), rgba(59, 130, 246, 0.03)) !important;
+}
+
+body.light-mode .bg-gray-900,
+body.light-mode .bg-gray-950 {
+    background-color: #f9fafb !important;
+}
+
+body.light-mode .text-white {
+    color: #1f2937 !important;
+}
+
+body.light-mode .text-gray-200 {
+    color: #374151 !important;
+}
+
+body.light-mode .text-gray-300 {
+    color: #6b7280 !important;
+}
+
+body.light-mode .text-gray-400 {
+    color: #9ca3af !important;
+}
+
+body.light-mode .text-gray-500 {
+    color: #6b7280 !important;
+}
+
+body.light-mode .text-cyan-300,
+body.light-mode .text-cyan-400 {
+    color: #0891b2 !important;
+}
+
+body.light-mode .text-blue-300,
+body.light-mode .text-blue-400 {
+    color: #0284c7 !important;
+}
+
+body.light-mode .text-blue-500 {
+    color: #3b82f6 !important;
+}
+
+body.light-mode .border-cyan-400 {
+    border-color: #06b6d4 !important;
+}
+
+body.light-mode .border-cyan-500 {
+    border-color: #06b6d4 !important;
+}
+
+body.light-mode .border-gray-700,
+body.light-mode .border-gray-700\/50 {
+    border-color: #e5e7eb !important;
+}
+
+body.light-mode .border-cyan-400\/20 {
+    border-color: rgba(6, 182, 212, 0.2) !important;
+}
+
+body.light-mode .glass-effect {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(6, 182, 212, 0.2) !important;
+}
+
+body.light-mode .glass-effect:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(6, 182, 212, 0.4) !important;
+}
+
+body.light-mode .bg-gray-800,
+body.light-mode .bg-gray-700 {
+    background-color: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+body.light-mode .bg-gray-800:hover {
+    background-color: #e5e7eb !important;
+}
+
+body.light-mode .skill-card {
+    background: rgba(243, 244, 246, 0.8) !important;
+    border: 1px solid rgba(6, 182, 212, 0.2) !important;
+}
+
+body.light-mode .skill-card:hover {
+    background: rgba(243, 244, 246, 1) !important;
+    border-color: rgba(6, 182, 212, 0.6) !important;
+}
+
+body.light-mode .skill-card span {
+    color: #0891b2 !important;
+}
+
+body.light-mode .bg-gradient-to-r {
+    background-image: linear-gradient(to right, #0891b2, #0284c7) !important;
+}
+
+body.light-mode .from-cyan-400,
+body.light-mode .from-cyan-500 {
+    --tw-gradient-from: #06b6d4 !important;
+}
+
+body.light-mode .to-blue-400,
+body.light-mode .to-blue-500 {
+    --tw-gradient-to: #0284c7 !important;
+}
+
+body.light-mode button#themeToggle {
+    background-color: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+body.light-mode button#themeToggle:hover {
+    background-color: #e5e7eb !important;
+}
+
+body.light-mode footer {
+    background-color: #ffffff !important;
+    border-top-color: rgba(6, 182, 212, 0.2) !important;
+}
+
+body.light-mode footer h3,
+body.light-mode footer h4 {
+    color: #0891b2 !important;
+}
+
+body.light-mode footer p,
+body.light-mode footer a {
+    color: #6b7280 !important;
+}
+
+body.light-mode footer a:hover {
+    color: #0891b2 !important;
+}
+
+/* ============ LIGHT MODE GRADIENT TEXT FIX ============ */
+body.light-mode .bg-gradient-to-r.from-cyan-400.to-blue-400.bg-clip-text {
+    background-image: linear-gradient(to right, #0c4a6e, #1e40af) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body.light-mode .bg-gradient-to-r.from-cyan-400.via-blue-400.to-cyan-300.bg-clip-text {
+    background-image: linear-gradient(to right, #0c4a6e, #1e40af, #0c4a6e) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ============ BLOB ANIMATIONS ============ */
+@keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
 /* ============ GLASSMORPHISM EFFECT ============ */
 .glass-effect {
     background: rgba(15, 23, 42, 0.6);
@@ -86,6 +286,69 @@ canvas#bgCanvas {
 
 .animate-float {
     animation: float 4s ease-in-out infinite;
+}
+
+/* ============ SCROLL REVEAL ANIMATIONS ============ */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal-left.reveal {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal-right.reveal {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger effect for multiple elements */
+.scroll-reveal:nth-child(1) { transition-delay: 0s; }
+.scroll-reveal:nth-child(2) { transition-delay: 0.1s; }
+.scroll-reveal:nth-child(3) { transition-delay: 0.2s; }
+.scroll-reveal:nth-child(4) { transition-delay: 0.3s; }
+.scroll-reveal:nth-child(5) { transition-delay: 0.4s; }
+.scroll-reveal:nth-child(6) { transition-delay: 0.5s; }
+
+/* ============ ACTIVE NAV INDICATOR ============ */
+nav .nav-link {
+    position: relative;
+}
+
+nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #06b6d4, #3b82f6);
+    transition: width 0.3s ease;
+}
+
+nav .nav-link:hover::after,
+nav .nav-link.active::after {
+    width: 100%;
 }
 
 /* Skill Card Styling */

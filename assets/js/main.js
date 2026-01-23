@@ -23,7 +23,13 @@ for (let i = 0; i < 80; i++) {
 
 function drawParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#0ff';
+    
+    // Determine particle color based on theme
+    const isDarkMode = document.documentElement.classList.contains('dark') || 
+                      localStorage.getItem('theme') === 'dark' ||
+                      !document.body.classList.contains('light-mode');
+    ctx.fillStyle = isDarkMode ? '#0ff' : '#06b6d4';
+    
     particles.forEach(p => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
@@ -37,6 +43,95 @@ function drawParticles() {
     requestAnimationFrame(drawParticles);
 }
 drawParticles();
+
+// ============ DARK/LIGHT MODE TOGGLE ============
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Apply initial theme immediately
+    applyTheme(savedTheme);
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+    
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            document.body.classList.add('light-mode');
+            sunIcon?.classList.remove('hidden');
+            moonIcon?.classList.add('hidden');
+        } else {
+            document.body.classList.remove('light-mode');
+            sunIcon?.classList.add('hidden');
+            moonIcon?.classList.remove('hidden');
+        }
+    }
+}
+
+// ============ SCROLL REVEAL ANIMATIONS ============
+function initScrollReveal() {
+    const reveals = document.querySelectorAll('section');
+    
+    reveals.forEach(element => {
+        // Add scroll-reveal class if not already present
+        if (!element.classList.contains('scroll-reveal') && element.id !== 'hero') {
+            element.classList.add('scroll-reveal');
+        }
+    });
+    
+    const revealOnScroll = () => {
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const revealTop = element.getBoundingClientRect().top;
+            const revealPoint = 100;
+            
+            if (revealTop < windowHeight - revealPoint) {
+                element.classList.add('reveal');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Check on page load
+}
+
+// ============ ACTIVE NAV INDICATOR ============
+function initActiveNav() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute('href'));
+            if (section && section.offsetTop <= window.scrollY + 200) {
+                current = link.getAttribute('data-section');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+// Initialize all features on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    initThemeToggle();
+    initScrollReveal();
+    initActiveNav();
+});
 
 function getProjectsData() {
     return fetch('projects.html')
