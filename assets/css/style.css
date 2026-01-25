@@ -575,7 +575,7 @@ Used to highlight education section when scrolled into view
     position: fixed;
     bottom: 30px;
     right: 30px;
-    bg-gradient-to-r: from-cyan-500 to-blue-500;
+    background: linear-gradient(90deg, #06b6d4, #3b82f6);
     padding: 16px 24px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(34, 211, 238, 0.6);
