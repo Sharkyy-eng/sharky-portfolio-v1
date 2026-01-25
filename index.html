@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for browser and SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sharky | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN - utility-first CSS framework -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS for animations and additional styling -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gray-950 text-white font-sans">
 
-    <!-- Particle Background -->
+    <!-- Canvas for animated particle background -->
     <canvas id="bgCanvas"></canvas>
 
-    <!-- Navbar -->
+    <!-- 
+    ==========================================
+    NAVIGATION BAR - Fixed at top of page
+    ==========================================
+    -->
     <nav class="fixed top-0 left-0 right-0 flex justify-between items-center px-8 py-4 bg-gray-900/95 backdrop-blur shadow-lg z-50">
         <h1 class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">~Site Under Continuous Learning~</h1>
         <div class="flex items-center gap-8">
             <ul class="flex gap-6">
                 <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
                 <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
-                <li><a href="projects1.html" class="hover:text-cyan-400 transition">Projects</a></li>
-                <li><a href="blogs.html" class="hover:text-cyan-400 transition">Blogs</a></li>
+                <li><a href="projects.html" class="hover:text-cyan-400 transition">Projects</a></li>
                 <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
             </ul>
             <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-cyan-400 hover:text-cyan-300" title="Toggle dark/light mode">
@@ -31,6 +39,13 @@
     </nav>
 
     <!-- Hero Section -->
+    <!-- 
+    ==========================================
+    HERO SECTION - Main landing area
+    Large hero with profile image, name, tagline
+    and CTA buttons
+    ==========================================
+    -->
     <section id="hero" class="flex flex-col items-center justify-center text-center min-h-screen px-6 pt-32 pb-20 transition-all duration-700 relative overflow-hidden">
         <!-- Animated gradient background -->
         <div class="absolute inset-0 -z-10 bg-gradient-to-b from-cyan-900/5 to-blue-900/5 animate-pulse"></div>
@@ -103,7 +118,13 @@
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- 
+    ==========================================
+    EDUCATION SECTION - Western University
+    Displays education info with 3D interactive logo
+    that responds to mouse movement
+    ==========================================
+    -->
     <section id="education" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Education</h2>
@@ -137,6 +158,13 @@
     </div>
 
     <!-- Experience Section -->
+    <!-- 
+    ==========================================
+    EXPERIENCE CAROUSEL SECTION
+    Interactive carousel showing professional roles
+    Auto-advances, supports keyboard/swipe navigation
+    ==========================================
+    -->
     <section id="experience" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-5xl font-bold text-cyan-400 mb-3 text-center">Professional <span class="text-cyan-300">Experience</span></h2>
@@ -289,7 +317,13 @@
         </div>
     </section>
 
-    <!-- Skills / Tech Stack -->
+    <!-- 
+    ==========================================
+    SKILLS & TECH STACK SECTION
+    Grid of skill cards with hover tooltips
+    Shows years of experience and usage examples
+    ==========================================
+    -->
     <section id="skills" class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-cyan-900/10 pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative z-10">
@@ -307,103 +341,180 @@
         </div>
     </section>
 
-    <!-- Featured Projects -->
-    <section id="projects" class="py-20 px-6">
+    <!-- 
+    ==========================================
+    FEATURED PROJECTS SECTION
+    Displays 4 featured projects in an auto-advancing carousel
+    Single-card focus with dimmed background cards visible
+    Auto-advances every 5s, supports keyboard/touch/dot navigation
+    Click "View All Projects" to see complete project listings
+    
+    PROJECT LINKS:
+    - By default: "Learn More" buttons link to GitHub repos
+    - Alternative: Expand/collapse details within the card (for projects without GitHub)
+    - To switch: Follow comments in Project 1 card and uncomment toggleProjectDetails() function
+    
+    TO ADD MORE PROJECTS:
+    1. Copy any existing project card (Project 1-4) 
+    2. Paste it before the "Clone of first project" comment
+    3. Update: image, title, description, tech tags, GitHub link
+    4. Update the first and last clone cards to match your new last project
+    5. Update projectsTotalItems variable in JavaScript (search for "UPDATE THIS")
+    6. Add a new dot button in the carousel-dot-projects section below
+    ==========================================
+    -->
+    <section id="projects" class="py-20 px-6 bg-gray-950 relative overflow-hidden">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/30 hover:border-cyan-400/60 transition-all animate-fade-in-up">
-                    <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg mb-4 w-full h-48 object-cover border border-cyan-400/50">
-                    <h3 class="text-xl font-bold text-cyan-300 mb-2">Autonomous Robot</h3>
-                    <p class="text-gray-300 text-sm mb-4">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
-                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
-                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4 text-center animate-fade-in-up">Featured Projects</h2>
+            <p class="text-gray-300 text-center mb-12 text-lg">Showcase of recent work and technical implementations</p>
+            
+            <!-- Projects Carousel Container -->
+            <div class="relative">
+                <!-- Carousel Track -->
+                <div id="projectsCarouselTrack" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Clone of last project (for infinite loop) -->
+                    <div class="carousel-item flex-shrink-0 w-full px-4">
+                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-pink-400/30 hover:border-pink-400/60 transition-all">
+                            <img src="assets/images/me.jpg" alt="Additional Project" class="rounded-lg mb-4 w-full h-64 object-cover border border-pink-400/50">
+                            <h3 class="text-xl font-bold text-pink-300 mb-2">More Projects</h3>
+                            <p class="text-gray-300 text-sm mb-4">Explore additional projects including embedded systems, machine learning applications, and automation solutions.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">Various Tech Stack</span>
+                            </div>
+                            <a href="https://github.com/yourusername/your-project" target="_blank" class="px-4 py-2 bg-pink-500/20 hover:bg-pink-500/40 text-pink-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                        </div>
                     </div>
-                    <a href="projects1.html" class="text-cyan-400 hover:text-cyan-300 transition font-semibold text-sm">View Details →</a>
+
+                    <!-- Project 1: Autonomous Robot -->
+                    <div class="carousel-item flex-shrink-0 w-full px-4">
+                        <div class="bg-gray-800/50 rounded-lg p-8 border border-cyan-400/30 hover:border-cyan-400/60 transition-all">
+                            <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg mb-4 w-full h-64 object-cover border border-cyan-400/50">
+                            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Autonomous Robot</h3>
+                            <p class="text-gray-300 text-sm mb-4">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
+                            </div>
+                            <!-- GitHub Link Option (Current) -->
+                            <a href="https://github.com/yourusername/autonomous-robot" target="_blank" class="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                            <!-- 
+                            Alternative: Modal/Expansion for projects without GitHub
+                            Uncomment below and comment out the GitHub link above to use expansion feature
+                            <button onclick="toggleProjectDetails('project1')" class="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold text-sm">Learn More →</button>
+                            <div id="project1-details" class="hidden mt-4 p-4 bg-gray-900/50 rounded-lg border border-cyan-400/20">
+                                <h4 class="text-lg font-bold text-cyan-300 mb-2">Project Details</h4>
+                                <p class="text-gray-300 text-sm mb-2">Add your detailed project description here. This can include:</p>
+                                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                                    <li>Technical implementation details</li>
+                                    <li>Challenges faced and solutions</li>
+                                    <li>Results and achievements</li>
+                                    <li>Future improvements planned</li>
+                                </ul>
+                                <p class="text-gray-400 text-xs italic">Perfect for projects without a GitHub repository.</p>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Vision Mouse -->
+                    <div class="carousel-item flex-shrink-0 w-full px-4">
+                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all">
+                            <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded-lg mb-4 w-full h-64 object-cover border border-blue-400/50">
+                            <h3 class="text-xl font-bold text-blue-300 mb-2">Vision Mouse</h3>
+                            <p class="text-gray-300 text-sm mb-4">Eye-tracking powered cursor control with automatic calibration. No manual tuning required—just look and control.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">MediaPipe</span>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Python</span>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">OpenCV</span>
+                            </div>
+                            <!-- GitHub Link -->
+                            <a href="https://github.com/yourusername/vision-mouse" target="_blank" class="px-4 py-2 bg-blue-500/20 hover:bg-blue-500/40 text-blue-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                            <!-- Alternative: <button onclick="toggleProjectDetails('project2')">Learn More →</button> + details div (see Project 1 for example) -->
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Weather Collector -->
+                    <div class="carousel-item flex-shrink-0 w-full px-4">
+                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all">
+                            <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded-lg mb-4 w-full h-64 object-cover border border-purple-400/50">
+                            <h3 class="text-xl font-bold text-purple-300 mb-2">Weather Collector</h3>
+                            <p class="text-gray-300 text-sm mb-4">IoT weather station powered by CyberPi. Real-time sensor data collection, cloud integration, and environmental monitoring.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">CyberPi</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">IoT</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Sensors</span>
+                            </div>
+                            <!-- GitHub Link -->
+                            <a href="https://github.com/yourusername/weather-collector" target="_blank" class="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                            <!-- Alternative: <button onclick="toggleProjectDetails('project3')">Learn More →</button> + details div (see Project 1 for example) -->
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (placeholder) -->
+                    <div class="carousel-item flex-shrink-0 w-full px-4">
+                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-pink-400/30 hover:border-pink-400/60 transition-all">
+                            <img src="assets/images/me.jpg" alt="Additional Project" class="rounded-lg mb-4 w-full h-64 object-cover border border-pink-400/50">
+                            <h3 class="text-xl font-bold text-pink-300 mb-2">More Projects</h3>
+                            <p class="text-gray-300 text-sm mb-4">Explore additional projects including embedded systems, machine learning applications, and automation solutions.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">Various Tech Stack</span>
+                            </div>
+                            <!-- Replace with your project's GitHub link -->
+                            <a href="https://github.com/yourusername/your-project" target="_blank" class="px-4 py-2 bg-pink-500/20 hover:bg-pink-500/40 text-pink-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                            <!-- Alternative: <button onclick="toggleProjectDetails('project4')">Learn More →</button> + details div (see Project 1 for example) -->
+                        </div>
+                    </div>
+
+                    <!-- Clone of first project (for infinite loop) -->
+                    <div class="carousel-item flex-shrink-0 w-full px-4">
+                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-cyan-400/30 hover:border-cyan-400/60 transition-all">
+                            <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg mb-4 w-full h-64 object-cover border border-cyan-400/50">
+                            <h3 class="text-xl font-bold text-cyan-300 mb-2">Autonomous Robot</h3>
+                            <p class="text-gray-300 text-sm mb-4">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
+                            </div>
+                            <a href="https://github.com/yourusername/autonomous-robot" target="_blank" class="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-gray-800/50 rounded-lg p-6 border border-blue-400/30 hover:border-blue-400/60 transition-all animate-fade-in-up" style="animation-delay: 0.1s">
-                    <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded-lg mb-4 w-full h-48 object-cover border border-blue-400/50">
-                    <h3 class="text-xl font-bold text-blue-300 mb-2">Vision Mouse</h3>
-                    <p class="text-gray-300 text-sm mb-4">Eye-tracking powered cursor control with automatic calibration. No manual tuning required—just look and control.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">MediaPipe</span>
-                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Python</span>
-                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">OpenCV</span>
-                    </div>
-                    <a href="projects1.html" class="text-blue-400 hover:text-blue-300 transition font-semibold text-sm">View Details →</a>
-                </div>
+                <!-- Navigation Arrows -->
+                <button id="projectsPrevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/80 hover:bg-cyan-400 text-black p-2 rounded-r-lg transition hidden md:block">
+                    ❮
+                </button>
+                <button id="projectsNextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/80 hover:bg-cyan-400 text-black p-2 rounded-l-lg transition hidden md:block">
+                    ❯
+                </button>
 
-                <!-- Project 3 -->
-                <div class="bg-gray-800/50 rounded-lg p-6 border border-purple-400/30 hover:border-purple-400/60 transition-all animate-fade-in-up" style="animation-delay: 0.2s">
-                    <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded-lg mb-4 w-full h-48 object-cover border border-purple-400/50">
-                    <h3 class="text-xl font-bold text-purple-300 mb-2">Weather Collector</h3>
-                    <p class="text-gray-300 text-sm mb-4">IoT weather station powered by CyberPi. Real-time sensor data collection, cloud integration, and environmental monitoring.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">CyberPi</span>
-                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">IoT</span>
-                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Sensors</span>
-                    </div>
-                    <a href="projects1.html" class="text-purple-400 hover:text-purple-300 transition font-semibold text-sm">View Details →</a>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-gray-800/50 rounded-lg p-6 border border-pink-400/30 hover:border-pink-400/60 transition-all animate-fade-in-up" style="animation-delay: 0.3s">
-                    <img src="assets/images/me.jpg" alt="Additional Project" class="rounded-lg mb-4 w-full h-48 object-cover border border-pink-400/50">
-                    <h3 class="text-xl font-bold text-pink-300 mb-2">More Projects</h3>
-                    <p class="text-gray-300 text-sm mb-4">Explore additional projects including embedded systems, machine learning applications, and automation solutions.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">Various Tech Stack</span>
-                    </div>
-                    <a href="projects1.html" class="text-pink-400 hover:text-pink-300 transition font-semibold text-sm">View All Projects →</a>
+                <!-- Carousel Dots -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button class="carousel-dot-projects active" data-index="0"></button>
+                    <button class="carousel-dot-projects" data-index="1"></button>
+                    <button class="carousel-dot-projects" data-index="2"></button>
+                    <button class="carousel-dot-projects" data-index="3"></button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Blogs Section -->
-    <section id="blogs" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/10 to-blue-900/10 pointer-events-none"></div>
-        <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Latest Blog Posts</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Blog Card 1 -->
-                <div class="glass-effect rounded-xl shadow-lg p-6 hover:shadow-cyan-500/50 hover:translate-y-minus-2 transition-all duration-300 animate-fade-in-up">
-                    <div class="mb-4">
-                        <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Robotics</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Building an Autonomous Robot</h3>
-                    <p class="text-gray-300 mb-4">
-                        A deep dive into the development process of creating an autonomous robot that can navigate complex environments and make intelligent decisions.
-                    </p>
-                    <a href="blogs.html" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">Read More →</a>
-                </div>
-
-                <!-- Blog Card 2 -->
-                <div class="glass-effect rounded-xl shadow-lg p-6 hover:shadow-cyan-500/50 hover:translate-y-minus-2 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
-                    <div class="mb-4">
-                        <span class="text-sm text-cyan-300 bg-gray-700 px-3 py-1 rounded-full">Computer Vision</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-cyan-300 mb-3">Vision-Based Mouse Control with MediaPipe</h3>
-                    <p class="text-gray-300 mb-4">
-                        Exploring eye-tracking technology and how to implement gesture recognition for hands-free computer control using MediaPipe and Python.
-                    </p>
-                    <a href="blogs.html" class="text-cyan-400 hover:text-cyan-300 transition font-semibold">Read More →</a>
-                </div>
-            </div>
+            <!-- View All Projects Button -->
             <div class="text-center mt-12">
-                <a href="blogs.html" class="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
-                    View All Articles
+                <a href="projects.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 inline-block">
+                    View All Projects →
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- 
+    ==========================================
+    CALL TO ACTION SECTION
+    Encourages visitor interaction and collaboration
+    Links to contact page for inquiries
+    ==========================================
+    -->
     <section class="py-20 px-6 relative overflow-hidden">
         <div class="max-w-2xl mx-auto glass-effect rounded-xl p-12 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
             <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Let's Work Together</h2>
@@ -416,7 +527,13 @@
         </div>
     </section>
 
-    <!-- Animated Stats -->
+    <!-- 
+    ==========================================
+    STATS SECTION - By The Numbers
+    Displays key metrics about work and experience
+    Animated counters showing portfolio achievements
+    ==========================================
+    -->
     <section class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-cyan-900/10 pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative z-10">
@@ -438,7 +555,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 
+    ==========================================
+    FOOTER SECTION
+    Navigation links, quick references, and social connections
+    Footer navigation mirrors navbar with Quick Links, Services, and Connect sections
+    ==========================================
+    -->
     <footer class="bg-gray-900 border-t border-cyan-400/20 py-12 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -457,7 +580,6 @@
                         <li><a href="index.html" class="text-gray-400 hover:text-cyan-400 transition">Home</a></li>
                         <li><a href="about.html" class="text-gray-400 hover:text-cyan-400 transition">About</a></li>
                         <li><a href="projects1.html" class="text-gray-400 hover:text-cyan-400 transition">Projects</a></li>
-                        <li><a href="blogs.html" class="text-gray-400 hover:text-cyan-400 transition">Blogs</a></li>
                     </ul>
                 </div>
                 
@@ -502,7 +624,12 @@
     </footer>
 
     <script>
-        // Interactive 3D Logo Tilt Effect
+        // ============================================================
+        // INTERACTIVE 3D LOGO TILT EFFECT
+        // Mouse tracking cursor hover effect on the Western University logo
+        // Rotates in 3D space based on mouse position (±x and ±y rotation)
+        // Adds cyan glow shadow for visual enhancement
+        // ============================================================
         const logoContainer = document.getElementById('logoContainer');
 
         if (logoContainer) {
@@ -527,7 +654,12 @@
             });
         }
 
-        // Education Popup Logic
+        // ============================================================
+        // EDUCATION POPUP NOTIFICATION LOGIC
+        // Shows a popup when education section comes into view
+        // Uses Intersection Observer to trigger on scroll
+        // Auto-hides after 5 seconds with smooth slideOut animation
+        // ============================================================
         let popupShown = false;
         const educationSection = document.getElementById('education');
         const educationPopup = document.getElementById('educationPopup');
@@ -552,7 +684,12 @@
 
         observer.observe(educationSection);
 
-        // Skill Card Hover Effects
+        // ============================================================
+        // SKILL CARD HOVER EFFECTS
+        // When hovering over a skill, other cards scale down (0.85x) and fade (0.6 opacity)
+        // Creates a focus effect to highlight the hovered skill
+        // Displays years of experience and skill description on hover
+        // ============================================================
         const skillCards = document.querySelectorAll('.skill-card');
         
         skillCards.forEach(card => {
@@ -576,7 +713,14 @@
             });
         });
 
-        // Carousel Functionality
+        // ============================================================
+        // CAROUSEL FUNCTIONALITY
+        // Infinite carousel with 6 total items (clone + 4 real + clone)
+        // Auto-advances every 5 seconds
+        // Supports keyboard navigation (← →), mouse clicks, touch/swipe, and dot navigation
+        // Carousel wraps seamlessly when reaching the end
+        // Center positioning shows active card + dimmed background cards
+        // ============================================================
         let currentSlide = 1; // Start at 1 (first real item, after clone)
         const carouselTrack = document.getElementById('carouselTrack');
         const carouselItems = document.querySelectorAll('.carousel-item');
@@ -626,6 +770,11 @@
         ];
 
         function updateCarousel(immediate = false) {
+            // Updates carousel position and card visibility states
+            // immediate = true skips transition for seamless infinite loop wraparound
+            // Active card (currentSlide): full opacity and scale
+            // Background cards: 40% opacity, 0.75x scale, blur effect
+            // Updates dot highlighting to match current position
             const itemWidth = carouselItems[0].offsetWidth;
             const offset = -currentSlide * itemWidth;
             
@@ -666,10 +815,11 @@
         }
 
         function nextSlide() {
+            // Advance carousel to next item
+            // If reached end clone, automatically jump to first real item without animation
             currentSlide++;
             updateCarousel();
             
-            // Check if we've reached the clone at the end and jump to real first item
             if (currentSlide > totalItems) {
                 setTimeout(() => {
                     currentSlide = 1;
@@ -681,10 +831,11 @@
         }
 
         function prevSlide() {
+            // Move carousel to previous item
+            // If goes before first real item, automatically jump to last real item without animation
             currentSlide--;
             updateCarousel();
             
-            // Check if we've gone before the first real item and jump to last real item
             if (currentSlide < 1) {
                 setTimeout(() => {
                     currentSlide = totalItems;
@@ -696,6 +847,8 @@
         }
 
         function goToSlide(index) {
+            // Jump directly to a specific slide via dot navigation
+            // index is the actual position (0-3), converted to carousel position with clone offset
             currentSlide = index + 1; // +1 because of clone at start
             updateCarousel();
             resetAutoAdvance();
@@ -712,6 +865,15 @@
             }, 5000);
         }
 
+        // ============================================================
+        // CAROUSEL INTERACTION HANDLERS
+        // Auto-advance: carousel moves every 5 seconds
+        // Pause on hover: stops auto-advance when user hovers over carousel
+        // Button clicks: prev/next arrows control carousel
+        // Dot navigation: clicking dots jumps to specific slides
+        // Keyboard: Arrow keys (← →) navigate carousel
+        // Touch/Swipe: swipe left/right on mobile to navigate
+        // ============================================================
         // Auto-advance
         startAutoAdvance();
 
@@ -730,13 +892,13 @@
             });
         });
 
-        // Keyboard navigation
+        // Keyboard navigation (Arrow keys)
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') prevSlide();
             if (e.key === 'ArrowRight') nextSlide();
         });
 
-        // Touch/Swipe support
+        // Touch/Swipe support (mobile devices)
         carouselTrack.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         });
@@ -747,6 +909,10 @@
         });
 
         function handleSwipe() {
+            // Calculates swipe direction and distance
+            // If swipe is > 50px, triggers next or prev slide
+            // Swipe right (negative diff) = previous slide
+            // Swipe left (positive diff) = next slide
             const swipeThreshold = 50;
             const diff = touchStartX - touchEndX;
             
@@ -766,6 +932,207 @@
         window.addEventListener('resize', () => {
             updateCarousel(true);
         });
+
+        // ============================================================
+        // PROJECTS CAROUSEL FUNCTIONALITY
+        // Similar structure to experience carousel with 6 items (clone + 4 real + clone)
+        // Auto-advances every 5 seconds, supports all navigation methods
+        // Single-card focus with background cards dimmed and scaled
+        // 
+        // TO ADD MORE PROJECTS:
+        // 1. Add new project cards in the HTML (between Project 4 and the last clone)
+        // 2. Update the clone cards (first and last) to match your new last project
+        // 3. Update projectsTotalItems below to match your number of real projects
+        // 4. Add a new dot in the carousel-dot-projects section
+        // 5. Each project should have the structure: carousel-item > card div > content
+        // ============================================================
+        let currentProjectSlide = 1; // Start at 1 (first real item, after clone)
+        const projectsCarouselTrack = document.getElementById('projectsCarouselTrack');
+        const projectsCarouselItems = document.querySelectorAll('#projectsCarouselTrack .carousel-item');
+        const projectsPrevBtn = document.getElementById('projectsPrevBtn');
+        const projectsNextBtn = document.getElementById('projectsNextBtn');
+        const projectsDots = document.querySelectorAll('.carousel-dot-projects');
+        const projectsTotalItems = 4; // UPDATE THIS if you add more projects (current: 4 real projects)
+        const projectsTotalSlides = projectsCarouselItems.length; // Total slides including clones
+        let projectsAutoAdvanceInterval;
+        let projectsTouchStartX = 0;
+        let projectsTouchEndX = 0;
+
+        function updateProjectsCarousel(immediate = false) {
+            // Updates projects carousel position and card visibility states
+            // immediate = true skips transition for seamless infinite loop wraparound
+            const itemWidth = projectsCarouselItems[0].offsetWidth;
+            const offset = -currentProjectSlide * itemWidth;
+            
+            if (immediate) {
+                projectsCarouselTrack.style.transition = 'none';
+                projectsCarouselTrack.style.transform = `translateX(${offset}px)`;
+                
+                setTimeout(() => {
+                    projectsCarouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                }, 0);
+            } else {
+                projectsCarouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                projectsCarouselTrack.style.transform = `translateX(${offset}px)`;
+            }
+            
+            // Update card states
+            projectsCarouselItems.forEach((item, index) => {
+                const cardDiv = item.querySelector('[class*="bg-gray"]');
+                if (index === currentProjectSlide) {
+                    // Active card - full visibility
+                    item.classList.remove('opacity-40', 'scale-75', 'blur-sm');
+                    item.classList.add('opacity-100', 'scale-100');
+                    if (cardDiv) cardDiv.classList.remove('blur-sm');
+                } else {
+                    // Background cards - dimmed and scaled
+                    item.classList.add('opacity-40', 'scale-75', 'blur-sm');
+                    item.classList.remove('opacity-100', 'scale-100');
+                }
+            });
+            
+            // Update dots
+            const actualIndex = (currentProjectSlide - 1 + projectsTotalItems) % projectsTotalItems;
+            projectsDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === actualIndex);
+            });
+        }
+
+        function nextProjectSlide() {
+            // Advance carousel to next project item
+            currentProjectSlide++;
+            updateProjectsCarousel();
+            
+            // Check if reached end clone and jump to first real item
+            if (currentProjectSlide > projectsTotalItems) {
+                setTimeout(() => {
+                    currentProjectSlide = 1;
+                    updateProjectsCarousel(true);
+                }, 600);
+            }
+            
+            resetProjectsAutoAdvance();
+        }
+
+        function prevProjectSlide() {
+            // Move carousel to previous project item
+            currentProjectSlide--;
+            updateProjectsCarousel();
+            
+            // Check if went before first real item and jump to last real item
+            if (currentProjectSlide < 1) {
+                setTimeout(() => {
+                    currentProjectSlide = projectsTotalItems;
+                    updateProjectsCarousel(true);
+                }, 600);
+            }
+            
+            resetProjectsAutoAdvance();
+        }
+
+        function goToProjectSlide(index) {
+            // Jump directly to a specific project via dot navigation
+            currentProjectSlide = index + 1; // +1 because of clone at start
+            updateProjectsCarousel();
+            resetProjectsAutoAdvance();
+        }
+
+        function startProjectsAutoAdvance() {
+            // Auto-advance projects carousel every 5 seconds
+            projectsAutoAdvanceInterval = setInterval(() => {
+                nextProjectSlide();
+            }, 5000);
+        }
+
+        function resetProjectsAutoAdvance() {
+            // Reset auto-advance timer when user interacts
+            clearInterval(projectsAutoAdvanceInterval);
+            startProjectsAutoAdvance();
+        }
+
+        // ============================================================
+        // PROJECTS CAROUSEL INTERACTION HANDLERS
+        // Auto-advance, pause on hover, button clicks, dot navigation
+        // Keyboard support (← →), touch/swipe support
+        // ============================================================
+        // Auto-advance
+        startProjectsAutoAdvance();
+
+        // Pause on hover
+        projectsCarouselTrack.addEventListener('mouseenter', () => clearInterval(projectsAutoAdvanceInterval));
+        projectsCarouselTrack.addEventListener('mouseleave', startProjectsAutoAdvance);
+
+        // Button clicks
+        projectsPrevBtn.addEventListener('click', prevProjectSlide);
+        projectsNextBtn.addEventListener('click', nextProjectSlide);
+
+        // Dot clicks
+        projectsDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToProjectSlide(parseInt(dot.dataset.index));
+            });
+        });
+
+        // Keyboard navigation (Arrow keys)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevProjectSlide();
+            if (e.key === 'ArrowRight') nextProjectSlide();
+        });
+
+        // Touch/Swipe support (mobile devices)
+        projectsCarouselTrack.addEventListener('touchstart', (e) => {
+            projectsTouchStartX = e.changedTouches[0].screenX;
+        });
+
+        projectsCarouselTrack.addEventListener('touchend', (e) => {
+            projectsTouchEndX = e.changedTouches[0].screenX;
+            handleProjectsSwipe();
+        });
+
+        function handleProjectsSwipe() {
+            // Calculates swipe direction and distance for projects carousel
+            const swipeThreshold = 50;
+            const diff = projectsTouchStartX - projectsTouchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextProjectSlide();
+                } else {
+                    prevProjectSlide();
+                }
+            }
+        }
+
+        // Initial projects carousel setup
+        updateProjectsCarousel(true);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateProjectsCarousel(true);
+        });
+
+        // ============================================================
+        // PROJECT DETAILS TOGGLE (ALTERNATIVE TO GITHUB LINKS)
+        // Uncomment this function and update project cards to use modal/expansion
+        // Use this for projects without a GitHub repo
+        // See Project 1 card for the HTML structure example
+        // ============================================================
+        /*
+        function toggleProjectDetails(projectId) {
+            const detailsDiv = document.getElementById(projectId + '-details');
+            if (detailsDiv) {
+                if (detailsDiv.classList.contains('hidden')) {
+                    // Show details
+                    detailsDiv.classList.remove('hidden');
+                    detailsDiv.classList.add('animate-fade-in-up');
+                } else {
+                    // Hide details
+                    detailsDiv.classList.add('hidden');
+                    detailsDiv.classList.remove('animate-fade-in-up');
+                }
+            }
+        }
+        */
     </script>
 
     <script src="assets/js/main.js"></script>

@@ -1,4 +1,11 @@
-/* Particle background */
+/* 
+===============================================
+PARTICLE BACKGROUND STYLING
+Animated canvas element covering entire viewport
+Fixed positioning with -1 z-index to appear behind all content
+Background color matches dark theme (gray-950)
+===============================================
+*/
 canvas#bgCanvas {
     position: fixed;
     top: 0; left: 0;
@@ -193,7 +200,14 @@ body.light-mode .bg-gradient-to-r.from-cyan-400.via-blue-400.to-cyan-300.bg-clip
     -webkit-text-fill-color: transparent !important;
 }
 
-/* ============ BLOB ANIMATIONS ============ */
+/* 
+===============================================
+BLOB ANIMATIONS
+Animated blob shapes that shift and scale
+Creates organic, flowing motion effect
+7-second infinite loop with staggered delays
+===============================================
+*/
 @keyframes blob {
     0%, 100% { transform: translate(0, 0) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
@@ -208,7 +222,14 @@ body.light-mode .bg-gradient-to-r.from-cyan-400.via-blue-400.to-cyan-300.bg-clip
     animation-delay: 2s;
 }
 
-/* ============ GLASSMORPHISM EFFECT ============ */
+/* 
+===============================================
+GLASSMORPHISM EFFECT
+Semi-transparent background with backdrop blur
+Creates frosted glass appearance on cards
+Border color adjusts on hover for emphasis
+===============================================
+*/
 .glass-effect {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(10px);
@@ -220,9 +241,14 @@ body.light-mode .bg-gradient-to-r.from-cyan-400.via-blue-400.to-cyan-300.bg-clip
     border: 1px solid rgba(34, 211, 238, 0.4);
 }
 
-/* ============ ANIMATIONS ============ */
-
-/* Fade In Animations */
+/* 
+===============================================
+CORE ANIMATIONS
+Fade in, fade up, and other transition effects
+Used across all sections for smooth appearance
+Timing: 0.6-0.8s with easing functions
+===============================================
+*/
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -288,7 +314,14 @@ body.light-mode .bg-gradient-to-r.from-cyan-400.via-blue-400.to-cyan-300.bg-clip
     animation: float 4s ease-in-out infinite;
 }
 
-/* ============ SCROLL REVEAL ANIMATIONS ============ */
+/* 
+===============================================
+SCROLL REVEAL ANIMATIONS
+Elements fade in when scrolled into view
+Available directions: up (default), left, right
+Smooth transitions with translateX/translateY
+===============================================
+*/
 .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -351,6 +384,16 @@ nav .nav-link.active::after {
     width: 100%;
 }
 
+/* 
+===============================================
+SKILL CARDS STYLING
+120x120px grid cards with tech stack icons
+Default: semi-transparent dark background
+Hover: brightens, scales up, shows cyan glow shadow
+On hover of one card: other cards scale to 0.85x and fade to 0.6 opacity
+Tooltip: appears to the right showing years + description
+===============================================
+*/
 /* Skill Card Styling */
 .skill-card {
     display: flex;
@@ -430,6 +473,15 @@ nav .nav-link.active::after {
     transform: translateY(-50%) translateX(0);
 }
 
+/* 
+===============================================
+CAROUSEL STYLING  
+Smooth transitions for carousel item positioning
+Active item: 100% opacity, full scale
+Background items: 40% opacity, 0.75x scale, blur effect
+Dots show active slide with rounded borders
+===============================================
+*/
 /* ============ SCROLL ANIMATIONS ============ */
 .animate-scroll-x {
     display: flex;
@@ -509,6 +561,15 @@ nav .nav-link.active::after {
     cursor: pointer;
 }
 
+/* 
+===============================================
+EDUCATION POPUP NOTIFICATION
+Fixed position notification in bottom-right
+Slides in from right with bounce effect (cubic-bezier)
+Auto-slides out after 5 seconds via JavaScript
+Used to highlight education section when scrolled into view
+===============================================
+*/
 /* Education Hover Popup */
 .education-popup {
     position: fixed;
@@ -563,6 +624,15 @@ nav .nav-link.active::after {
     box-shadow: 0 0 30px rgba(34, 211, 238, 0.9), 0 25px 50px rgba(34, 211, 238, 0.5) !important;
 }
 
+/* 
+===============================================
+EDUCATION LOGO - 3D INTERACTIVE STYLING
+Cursor-tracking 3D tilt effect on logo
+Perspective: 1200px for realistic 3D effect
+Smooth transitions (0.3s) for rotation changes
+Cyan glow shadow on hover
+===============================================
+*/
 /* Education Logo - Interactive 3D Cursor Follow */
 .education-logo-interactive {
     perspective: 1200px;
@@ -578,6 +648,14 @@ nav .nav-link.active::after {
     background-color: #e5e7eb;
 }
 
+/* 
+===============================================
+SCROLLBAR CUSTOMIZATION
+Hide scrollbar for custom scroll experiences
+Maintains scrolling functionality
+Applied to elements with .scrollbar-hide class
+===============================================
+*/
 /* Hide scrollbar but allow scrolling */
 .scrollbar-hide {
     -ms-overflow-style: none;
@@ -588,6 +666,15 @@ nav .nav-link.active::after {
     display: none;
 }
 
+/* 
+===============================================
+CAROUSEL STYLING
+Track: 0.6s smooth transitions with cubic-bezier easing
+Items: 0.3s individual transitions for opacity/scale
+Dots: 8px default, expand to 24px when active
+Active dot: full opacity (100%), inactive: 50% opacity
+===============================================
+*/
 /* Carousel smooth transitions */
 #carouselTrack {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
