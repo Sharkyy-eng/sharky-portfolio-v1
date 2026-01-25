@@ -103,38 +103,188 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Education</h2>
+            <div class="bg-gray-800/50 rounded-lg p-8 border border-cyan-400/30 hover:border-cyan-400/60 transition-all animate-fade-in-up">
+                <div class="flex items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="rounded-xl border-2 border-cyan-400 shadow-2xl shadow-cyan-500/60 transition-all duration-300 p-2 education-logo-interactive" id="logoContainer">
+                            <div class="bg-white rounded-lg p-3 flex items-center justify-center" id="logoBg">
+                                <img src="assets/images/Western University Logo.png" alt="Western University" class="h-24 object-contain">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-cyan-300 mb-2">Mechatronics & AI Systems Engineering</h3>
+                        <p class="text-cyan-200 font-semibold mb-2">Bachelor of Engineering Science</p>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm mb-2">
+                            <span>📍 Western University, London, Canada</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-cyan-300 text-sm font-semibold">
+                            <span>🎓 Expected Graduation: May 2029 | 2nd Year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Hover Popup -->
+    <div id="educationPopup" class="fixed bottom-8 right-8 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-4 rounded-lg shadow-2xl z-50 pointer-events-none hidden" style="box-shadow: 0 10px 40px rgba(34, 211, 238, 0.6);">
+        <p class="font-semibold">✨ Hover over the Western logo to see a cool 3D effect!</p>
+    </div>
+
     <!-- Experience Section -->
     <section id="experience" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Experience</h2>
-            <div class="space-y-6">
-                <!-- Experience Item -->
-                <div class="glass-effect rounded-xl p-6 shadow-lg border-l-4 border-cyan-400 hover:shadow-cyan-500/30 hover:translate-x-2 transition-all duration-300 animate-fade-in-up">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-cyan-300">Mechatronics & AI Systems Engineering</h3>
-                            <p class="text-cyan-200">Western University, London, Canada</p>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-cyan-400 mb-3 text-center">Professional <span class="text-cyan-300">Experience</span></h2>
+            <p class="text-gray-300 text-center mb-12">My journey through various roles, each contributing to my growth as an engineer and innovator.</p>
+            
+            <!-- Carousel Container -->
+            <div class="relative flex justify-center">
+                <div class="overflow-hidden w-full max-w-4xl">
+                    <div id="carouselTrack" class="flex transition-transform duration-500">
+                        <!-- Experience Item 0 (Clone of Last) -->
+                        <div class="carousel-item flex-shrink-0 w-full px-4 opacity-40 scale-75 transition-all duration-300">
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/30 h-full flex flex-col blur-sm">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-cyan-300 mb-1">Robot Designer and Trainer</h3>
+                                        <p class="text-cyan-200 font-semibold text-sm mb-1">MEBOT Robotics</p>
+                                        <p class="text-gray-400 text-xs mb-3">Mar 2024 - Aug 2024 | 🎓</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 text-sm mb-4 flex-grow">Designed and built educational robots, created training curriculum for students aged 8-15, and delivered product demos to industry and academic clients.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Hardware Design</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Curriculum Dev</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="text-gray-400">2nd Year</span>
-                    </div>
-                    <p class="text-gray-300 mt-3">
-                        Building expertise in robotics, automation, and intelligent systems with hands-on projects in control systems, computer vision, and embedded programming.
-                    </p>
-                </div>
-                
-                <!-- Experience Item -->
-                <div class="glass-effect rounded-xl p-6 shadow-lg border-l-4 border-blue-400 hover:shadow-cyan-500/30 hover:translate-x-2 transition-all duration-300 animate-fade-in-up-delay">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-300">Robotics & Automation Projects</h3>
-                            <p class="text-cyan-200">Personal & Academic Work</p>
+
+                        <!-- Experience Item 1 -->
+                        <div class="carousel-item flex-shrink-0 w-full px-4 opacity-40 scale-75 transition-all duration-300">
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/30 hover:border-cyan-400/60 transition-all h-full flex flex-col blur-sm">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-cyan-300 mb-1">Prototyping Engineer for Advanced SAE UAV</h3>
+                                        <p class="text-cyan-200 font-semibold text-sm mb-1">Western Aero Design</p>
+                                        <p class="text-gray-400 text-xs mb-3">Sep 2025 - Present | 🛩️</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 text-sm mb-4 flex-grow">Leading development of a competitive Tricopter UAV prototype for the International SAE Challenge, focusing on rapid prototyping and system reliability.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">CAD Design</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">3D Printing</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Circuit Design</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Soldering</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="text-gray-400">Ongoing</span>
+                        
+                        <!-- Experience Item 2 -->
+                        <div class="carousel-item flex-shrink-0 w-full px-4 opacity-40 scale-75 transition-all duration-300">
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-blue-400/30 hover:border-blue-400/60 transition-all h-full flex flex-col blur-sm">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-blue-300 mb-1">Software Lead Ri3D (Robot in 3 Days)</h3>
+                                        <p class="text-blue-200 font-semibold text-sm mb-1">WEFIRST Robotics Club</p>
+                                        <p class="text-gray-400 text-xs mb-3">Jan 2026 | 🤖</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 text-sm mb-4 flex-grow">Directed the software life-cycle for a competitive robot, commissioning a functional prototype from concept to operation within a strict 72-hour deadline.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Java</span>
+                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">C++</span>
+                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">FRC Framework</span>
+                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">PID Control</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 3 -->
+                        <div class="carousel-item flex-shrink-0 w-full px-4 opacity-40 scale-75 transition-all duration-300">
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-purple-400/30 hover:border-purple-400/60 transition-all h-full flex flex-col blur-sm">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-purple-300 mb-1">CV and AI Application Intern</h3>
+                                        <p class="text-purple-200 font-semibold text-sm mb-1">MAANTT Global Services</p>
+                                        <p class="text-gray-400 text-xs mb-3">May 2025 - Aug 2025 | 🧠</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 text-sm mb-4 flex-grow">Developed an AI proctoring engine with object detection, pose estimation, and audio analysis achieving 90% detection accuracy for 50+ candidates.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Python</span>
+                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">TensorFlow</span>
+                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">MediaPipe</span>
+                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Computer Vision</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 4 -->
+                        <div class="carousel-item flex-shrink-0 w-full px-4 opacity-40 scale-75 transition-all duration-300">
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/30 hover:border-cyan-400/60 transition-all h-full flex flex-col blur-sm">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-cyan-300 mb-1">Robot Designer and Trainer</h3>
+                                        <p class="text-cyan-200 font-semibold text-sm mb-1">MEBOT Robotics</p>
+                                        <p class="text-gray-400 text-xs mb-3">Mar 2024 - Aug 2024 | 🎓</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 text-sm mb-4 flex-grow">Designed and built educational robots, created training curriculum for students aged 8-15, and delivered product demos to industry and academic clients.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Hardware Design</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Curriculum Dev</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 5 (Clone of First) -->
+                        <div class="carousel-item flex-shrink-0 w-full px-4 opacity-40 scale-75 transition-all duration-300">
+                            <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/30 h-full flex flex-col blur-sm">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-cyan-300 mb-1">Prototyping Engineer for Advanced SAE UAV</h3>
+                                        <p class="text-cyan-200 font-semibold text-sm mb-1">Western Aero Design</p>
+                                        <p class="text-gray-400 text-xs mb-3">Sep 2025 - Present | 🛩️</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 text-sm mb-4 flex-grow">Leading development of a competitive Tricopter UAV prototype for the International SAE Challenge, focusing on rapid prototyping and system reliability.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">CAD Design</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">3D Printing</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Circuit Design</span>
+                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Soldering</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-gray-300 mt-3">
-                        Developing autonomous systems, IoT solutions, and computer vision applications. Experience with Arduino, Python, Java, and machine learning frameworks.
-                    </p>
                 </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-full p-3 transition-all hidden md:block" aria-label="Previous">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-full p-3 transition-all hidden md:block" aria-label="Next">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Carousel Dots -->
+            <div class="flex justify-center gap-2 mt-8">
+                <button class="carousel-dot w-2 h-2 rounded-full bg-cyan-500/50 hover:bg-cyan-500 transition-all active" data-index="0" aria-label="Slide 1"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-cyan-500/50 hover:bg-cyan-500 transition-all" data-index="1" aria-label="Slide 2"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-cyan-500/50 hover:bg-cyan-500 transition-all" data-index="2" aria-label="Slide 3"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-cyan-500/50 hover:bg-cyan-500 transition-all" data-index="3" aria-label="Slide 4"></button>
             </div>
         </div>
     </section>
@@ -145,14 +295,14 @@
         <div class="max-w-4xl mx-auto relative z-10">
             <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Skills & Tech Stack</h2>
             <div class="flex flex-wrap justify-center gap-8">
-                <div class="skill-card animate-fade-in-up"><img src="assets/icons/python.svg" alt="Python" class="w-16 h-16 mb-3"><span>Python</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.1s"><img src="assets/icons/arduino.svg" alt="Arduino" class="w-16 h-16 mb-3"><span>Arduino</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.2s"><img src="assets/icons/javascript.svg" alt="JavaScript" class="w-16 h-16 mb-3"><span>JavaScript</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.3s"><img src="assets/icons/html.svg" alt="HTML" class="w-16 h-16 mb-3"><span>HTML</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.4s"><img src="assets/icons/css.svg" alt="CSS" class="w-16 h-16 mb-3"><span>CSS</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.5s"><img src="assets/icons/java.svg" alt="Java" class="w-16 h-16 mb-3"><span>Java</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.6s"><img src="assets/icons/tensorflow.svg" alt="TensorFlow" class="w-16 h-16 mb-3"><span>TensorFlow</span></div>
-                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.7s"><img src="assets/icons/linux.svg" alt="Linux" class="w-16 h-16 mb-3"><span>Linux</span></div>
+                <div class="skill-card animate-fade-in-up" data-years="3+" data-description="ML pipelines, data analysis, automation, computer vision"><img src="assets/icons/python.svg" alt="Python" class="w-16 h-16 mb-3"><span>Python</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.1s" data-years="2+" data-description="Microcontroller programming, robotics prototyping"><img src="assets/icons/arduino.svg" alt="Arduino" class="w-16 h-16 mb-3"><span>Arduino</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.2s" data-years="2+" data-description="Web development, DOM manipulation, interactive UIs"><img src="assets/icons/javascript.svg" alt="JavaScript" class="w-16 h-16 mb-3"><span>JavaScript</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.3s" data-years="2+" data-description="Semantic markup, responsive design, accessibility"><img src="assets/icons/html.svg" alt="HTML" class="w-16 h-16 mb-3"><span>HTML</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.4s" data-years="2+" data-description="Responsive layouts, animations, Tailwind CSS"><img src="assets/icons/css.svg" alt="CSS" class="w-16 h-16 mb-3"><span>CSS</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.5s" data-years="1+" data-description="FRC programming, control systems, real-time execution"><img src="assets/icons/java.svg" alt="Java" class="w-16 h-16 mb-3"><span>Java</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.6s" data-years="1+" data-description="Neural networks, model training, computer vision"><img src="assets/icons/tensorflow.svg" alt="TensorFlow" class="w-16 h-16 mb-3"><span>TensorFlow</span></div>
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.7s" data-years="2+" data-description="System administration, embedded systems, development"><img src="assets/icons/linux.svg" alt="Linux" class="w-16 h-16 mb-3"><span>Linux</span></div>
             </div>
         </div>
     </section>
@@ -161,51 +311,56 @@
     <section id="projects" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12 text-center animate-fade-in-up">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Autonomous Robot -->
-                <div class="glass-effect rounded-xl shadow-lg p-6 flex flex-col items-center group relative overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
-                    <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
-                    <span class="text-xl font-semibold text-cyan-300 mb-2">Autonomous Robot</span>
-                    <p class="text-gray-400 text-center">Navigates routes autonomously, detects bus stops, follows traffic lights, and more.</p>
-                    <!-- Hover Overlay -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 bg-opacity-90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        <img src="assets/images/me.jpg" alt="Autonomous Robot GIF" class="w-40 h-40 rounded mb-4 object-cover border-2 border-cyan-400">
-                        <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
-                            More Details
-                        </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/30 hover:border-cyan-400/60 transition-all animate-fade-in-up">
+                    <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg mb-4 w-full h-48 object-cover border border-cyan-400/50">
+                    <h3 class="text-xl font-bold text-cyan-300 mb-2">Autonomous Robot</h3>
+                    <p class="text-gray-300 text-sm mb-4">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
                     </div>
+                    <a href="projects1.html" class="text-cyan-400 hover:text-cyan-300 transition font-semibold text-sm">View Details →</a>
                 </div>
-                <!-- Vision Mouse -->
-                <div class="glass-effect rounded-xl shadow-lg p-6 flex flex-col items-center group relative overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.1s">
-                    <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
-                    <span class="text-xl font-semibold text-cyan-300 mb-2">Vision Mouse</span>
-                    <p class="text-gray-400 text-center">Vision-Mouse with automatic calibration—no manual tuning required.</p>
-                    <!-- Hover Overlay -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 bg-opacity-90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        <img src="assets/images/vision_mouse_gif_placeholder.gif" alt="Vision Mouse GIF" class="w-40 h-40 rounded mb-4 object-cover border-2 border-cyan-400">
-                        <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
-                            More Details
-                        </button>
+
+                <!-- Project 2 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 border border-blue-400/30 hover:border-blue-400/60 transition-all animate-fade-in-up" style="animation-delay: 0.1s">
+                    <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded-lg mb-4 w-full h-48 object-cover border border-blue-400/50">
+                    <h3 class="text-xl font-bold text-blue-300 mb-2">Vision Mouse</h3>
+                    <p class="text-gray-300 text-sm mb-4">Eye-tracking powered cursor control with automatic calibration. No manual tuning required—just look and control.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">MediaPipe</span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Python</span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">OpenCV</span>
                     </div>
+                    <a href="projects1.html" class="text-blue-400 hover:text-blue-300 transition font-semibold text-sm">View Details →</a>
                 </div>
-                <!-- Weather Collector cyberPi-->
-                <div class="glass-effect rounded-xl shadow-lg p-6 flex flex-col items-center group relative overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up" style="animation-delay: 0.2s">
-                    <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded mb-4 w-32 h-32 object-cover border-2 border-cyan-400 transition-transform duration-300 group-hover:scale-110">
-                    <span class="text-xl font-semibold text-cyan-300 mb-2">Weather Collector</span>
-                    <p class="text-gray-400 text-center">IoT weather station powered by CyberPi.</p>
-                    <!-- Hover Overlay -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 bg-opacity-90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        <img src="assets/images/weather_collector_gif_placeholder.gif" alt="Weather Collector GIF" class="w-40 h-40 rounded mb-4 object-cover border-2 border-cyan-400">
-                        <button onclick="window.location.href='projects1.html'" class="px-4 py-2 bg-cyan-400 text-gray-900 rounded hover:bg-cyan-300 transition font-semibold">
-                            More Details
-                        </button>
+
+                <!-- Project 3 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 border border-purple-400/30 hover:border-purple-400/60 transition-all animate-fade-in-up" style="animation-delay: 0.2s">
+                    <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded-lg mb-4 w-full h-48 object-cover border border-purple-400/50">
+                    <h3 class="text-xl font-bold text-purple-300 mb-2">Weather Collector</h3>
+                    <p class="text-gray-300 text-sm mb-4">IoT weather station powered by CyberPi. Real-time sensor data collection, cloud integration, and environmental monitoring.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">CyberPi</span>
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">IoT</span>
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Sensors</span>
                     </div>
+                    <a href="projects1.html" class="text-purple-400 hover:text-purple-300 transition font-semibold text-sm">View Details →</a>
                 </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="projects1.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">
-                    View All Projects
-                </a>
+
+                <!-- Project 4 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 border border-pink-400/30 hover:border-pink-400/60 transition-all animate-fade-in-up" style="animation-delay: 0.3s">
+                    <img src="assets/images/me.jpg" alt="Additional Project" class="rounded-lg mb-4 w-full h-48 object-cover border border-pink-400/50">
+                    <h3 class="text-xl font-bold text-pink-300 mb-2">More Projects</h3>
+                    <p class="text-gray-300 text-sm mb-4">Explore additional projects including embedded systems, machine learning applications, and automation solutions.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">Various Tech Stack</span>
+                    </div>
+                    <a href="projects1.html" class="text-pink-400 hover:text-pink-300 transition font-semibold text-sm">View All Projects →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -345,6 +500,273 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Interactive 3D Logo Tilt Effect
+        const logoContainer = document.getElementById('logoContainer');
+
+        if (logoContainer) {
+            logoContainer.addEventListener('mousemove', (e) => {
+                const rect = logoContainer.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                const rotateX = (mouseY - centerY) / 5;
+                const rotateY = (mouseX - centerX) / 5;
+                
+                logoContainer.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                logoContainer.style.boxShadow = `0 0 40px rgba(34, 211, 238, 1), 0 30px 60px rgba(34, 211, 238, 0.6)`;
+            });
+
+            logoContainer.addEventListener('mouseleave', () => {
+                logoContainer.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) scale(1)';
+                logoContainer.style.boxShadow = '0 0 rgba(34, 211, 238, 0.6)';
+            });
+        }
+
+        // Education Popup Logic
+        let popupShown = false;
+        const educationSection = document.getElementById('education');
+        const educationPopup = document.getElementById('educationPopup');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !popupShown) {
+                    popupShown = true;
+                    educationPopup.classList.remove('hidden');
+                    educationPopup.style.animation = 'slideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+                    
+                    // Hide popup after 5 seconds
+                    setTimeout(() => {
+                        educationPopup.style.animation = 'slideOut 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+                        setTimeout(() => {
+                            educationPopup.classList.add('hidden');
+                        }, 500);
+                    }, 5000);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(educationSection);
+
+        // Skill Card Hover Effects
+        const skillCards = document.querySelectorAll('.skill-card');
+        
+        skillCards.forEach(card => {
+            const years = card.getAttribute('data-years');
+            const description = card.getAttribute('data-description');
+            
+            card.addEventListener('mouseenter', function() {
+                // Scale down other cards
+                skillCards.forEach(otherCard => {
+                    if (otherCard !== this) {
+                        otherCard.classList.add('other-cards');
+                    }
+                });
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                // Remove scale effect from all cards
+                skillCards.forEach(otherCard => {
+                    otherCard.classList.remove('other-cards');
+                });
+            });
+        });
+
+        // Carousel Functionality
+        let currentSlide = 1; // Start at 1 (first real item, after clone)
+        const carouselTrack = document.getElementById('carouselTrack');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalItems = 4; // Actual experience items (not including clones)
+        const totalSlides = carouselItems.length; // Total slides including clones
+        let autoAdvanceInterval;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        // Experience data with expanded content from about.html
+        const experienceData = [
+            {
+                title: "Prototyping Engineer for Advanced SAE UAV",
+                company: "Western Aero Design",
+                date: "Sep 2025 - Present | 🛩️",
+                shortDesc: "Leading development of a competitive Tricopter UAV prototype for the International SAE Challenge, focusing on rapid prototyping and system reliability.",
+                expandedDesc: "Leading development of a competitive Tricopter UAV prototype for the International SAE Challenge, focusing on rapid prototyping and system reliability. Responsible for mechanical design, prototyping iterations, and hardware integration.",
+                color: "cyan"
+            },
+            {
+                title: "Software Lead Ri3D (Robot in 3 Days)",
+                company: "WEFIRST Robotics Club",
+                date: "Jan 2026 | 🤖",
+                shortDesc: "Directed the software life-cycle for a competitive robot, commissioning a functional prototype from concept to operation within a strict 72-hour deadline.",
+                expandedDesc: "Directed the software life-cycle for a competitive robot, commissioning a functional prototype from concept to operation within a strict 72-hour deadline. Managed team workflow, debugging, and real-time control systems.",
+                color: "blue"
+            },
+            {
+                title: "CV and AI Application Intern",
+                company: "MAANTT Global Services",
+                date: "May 2025 - Aug 2025 | 🧠",
+                shortDesc: "Developed an AI proctoring engine with object detection, pose estimation, and audio analysis achieving 90% detection accuracy for 50+ candidates.",
+                expandedDesc: "Developed an AI proctoring engine with object detection, pose estimation, audio analysis, and multi-person tracking achieving 90% detection accuracy for 50+ candidates. Implemented end-to-end ML pipeline and optimized models for real-time performance.",
+                color: "purple"
+            },
+            {
+                title: "Robot Designer and Trainer",
+                company: "MEBOT Robotics",
+                date: "Mar 2024 - Aug 2024 | 🎓",
+                shortDesc: "Designed and built educational robots, created training curriculum for students aged 8-15, and delivered product demos to industry and academic clients.",
+                expandedDesc: "Designed and built educational robots, created training curriculum for students aged 8-15, and delivered product demos to industry and academic clients. Developed engaging hands-on learning experiences and mentored students in robotics fundamentals.",
+                color: "pink"
+            }
+        ];
+
+        function updateCarousel(immediate = false) {
+            const itemWidth = carouselItems[0].offsetWidth;
+            const offset = -currentSlide * itemWidth;
+            
+            if (immediate) {
+                carouselTrack.style.transition = 'none';
+                carouselTrack.style.transform = `translateX(${offset}px)`;
+                // Trigger reflow to ensure the transform is applied without animation
+                void carouselTrack.offsetHeight;
+                // Re-enable transition for next animation
+                setTimeout(() => {
+                    carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+                }, 0);
+            } else {
+                carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+                carouselTrack.style.transform = `translateX(${offset}px)`;
+            }
+            
+            // Update card states
+            carouselItems.forEach((item, index) => {
+                const cardDiv = item.querySelector('[class*="bg-gray"]');
+                if (index === currentSlide) {
+                    // Active card - full visibility
+                    item.classList.remove('opacity-40', 'scale-75', 'blur-sm');
+                    item.classList.add('opacity-100', 'scale-100');
+                    if (cardDiv) cardDiv.classList.remove('blur-sm');
+                } else {
+                    // Background cards - dimmed and scaled
+                    item.classList.add('opacity-40', 'scale-75', 'blur-sm');
+                    item.classList.remove('opacity-100', 'scale-100');
+                }
+            });
+            
+            // Update dots based on actual item index
+            const actualIndex = (currentSlide - 1 + totalItems) % totalItems;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === actualIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            updateCarousel();
+            
+            // Check if we've reached the clone at the end and jump to real first item
+            if (currentSlide > totalItems) {
+                setTimeout(() => {
+                    currentSlide = 1;
+                    updateCarousel(true);
+                }, 500);
+            }
+            
+            resetAutoAdvance();
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            updateCarousel();
+            
+            // Check if we've gone before the first real item and jump to last real item
+            if (currentSlide < 1) {
+                setTimeout(() => {
+                    currentSlide = totalItems;
+                    updateCarousel(true);
+                }, 500);
+            }
+            
+            resetAutoAdvance();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index + 1; // +1 because of clone at start
+            updateCarousel();
+            resetAutoAdvance();
+        }
+
+        function resetAutoAdvance() {
+            clearInterval(autoAdvanceInterval);
+            startAutoAdvance();
+        }
+
+        function startAutoAdvance() {
+            autoAdvanceInterval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+        }
+
+        // Auto-advance
+        startAutoAdvance();
+
+        // Pause on hover
+        carouselTrack.addEventListener('mouseenter', () => clearInterval(autoAdvanceInterval));
+        carouselTrack.addEventListener('mouseleave', startAutoAdvance);
+
+        // Button clicks
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Dot clicks
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.index));
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Touch/Swipe support
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Initial carousel setup
+        updateCarousel(true);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateCarousel(true);
+        });
+    </script>
 
     <script src="assets/js/main.js"></script>
 </body>
