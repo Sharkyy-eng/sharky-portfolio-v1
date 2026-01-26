@@ -704,3 +704,69 @@ Active dot: full opacity (100%), inactive: 50% opacity
 .carousel-dot:hover {
     background-color: rgba(34, 211, 238, 0.8);
 }
+
+/* 
+===============================================
+PROJECTS CAROUSEL STYLING
+Featured projects carousel with single-card focus
+Container prevents overflow and manages layout
+Track smooth transitions and infinite loop behavior
+Items: Full viewport width to show one card centered at a time
+Background items appear dimmed and scaled behind active card
+===============================================
+*/
+/* Projects Carousel Container */
+#projectsCarouselTrack {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Each carousel item takes full container width */
+.carousel-item {
+    flex-shrink: 0;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 100%;
+}
+
+/* Opacity and scale transitions for background cards */
+.carousel-item.opacity-40 {
+    opacity: 0.4;
+}
+
+.carousel-item.scale-75 {
+    transform: scale(0.75);
+}
+
+.carousel-item.opacity-100 {
+    opacity: 1;
+}
+
+.carousel-item.scale-100 {
+    transform: scale(1);
+}
+
+.carousel-item.blur-sm div {
+    filter: blur(4px);
+}
+
+/* Projects Carousel Dots */
+.carousel-dot-projects {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(34, 211, 238, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot-projects.active {
+    background-color: rgba(34, 211, 238, 1);
+    width: 24px;
+    border-radius: 4px;
+}
+
+.carousel-dot-projects:hover {
+    background-color: rgba(34, 211, 238, 0.8);
+}

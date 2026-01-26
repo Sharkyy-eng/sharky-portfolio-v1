@@ -29,7 +29,6 @@
                 <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
                 <li><a href="about.html" class="hover:text-cyan-400 transition">About</a></li>
                 <li><a href="projects.html" class="hover:text-cyan-400 transition">Projects</a></li>
-                <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
             </ul>
             <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-cyan-400 hover:text-cyan-300" title="Toggle dark/light mode">
                 <svg id="sunIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -65,8 +64,8 @@
             <a href="projects1.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
                 View My Work
             </a>
-            <a href="contact.html" class="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                Get In Touch
+            <a href="https://yourdomain.com/resume" target="_blank" class="px-8 py-3 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                View Resume
             </a>
         </div>
         
@@ -344,163 +343,83 @@
     <!-- 
     ==========================================
     FEATURED PROJECTS SECTION
-    Displays 4 featured projects in an auto-advancing carousel
-    Single-card focus with dimmed background cards visible
-    Auto-advances every 5s, supports keyboard/touch/dot navigation
-    Click "View All Projects" to see complete project listings
-    
-    PROJECT LINKS:
-    - By default: "Learn More" buttons link to GitHub repos
-    - Alternative: Expand/collapse details within the card (for projects without GitHub)
-    - To switch: Follow comments in Project 1 card and uncomment toggleProjectDetails() function
-    
-    TO ADD MORE PROJECTS:
-    1. Copy any existing project card (Project 1-4) 
-    2. Paste it before the "Clone of first project" comment
-    3. Update: image, title, description, tech tags, GitHub link
-    4. Update the first and last clone cards to match your new last project
-    5. Update projectsTotalItems variable in JavaScript (search for "UPDATE THIS")
-    6. Add a new dot button in the carousel-dot-projects section below
+    Grid-based layout showcasing featured projects
+    Each project displayed with image, description, tech stack, and action buttons
+    Alternating image/text layout for visual interest
     ==========================================
     -->
     <section id="projects" class="py-20 px-6 bg-gray-950 relative overflow-hidden">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4 text-center animate-fade-in-up">Featured Projects</h2>
-            <p class="text-gray-300 text-center mb-12 text-lg">Showcase of recent work and technical implementations</p>
+            <p class="text-gray-300 text-center mb-12 text-lg">A curated selection of my recent work, each project representing innovation and technical excellence.</p>
             
-            <!-- Projects Carousel Container -->
-            <div class="relative">
-                <!-- Carousel Track -->
-                <div id="projectsCarouselTrack" class="flex transition-transform duration-500 ease-in-out">
-                    <!-- Clone of last project (for infinite loop) -->
-                    <div class="carousel-item flex-shrink-0 w-full px-4">
-                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-pink-400/30 hover:border-pink-400/60 transition-all">
-                            <img src="assets/images/me.jpg" alt="Additional Project" class="rounded-lg mb-4 w-full h-64 object-cover border border-pink-400/50">
-                            <h3 class="text-xl font-bold text-pink-300 mb-2">More Projects</h3>
-                            <p class="text-gray-300 text-sm mb-4">Explore additional projects including embedded systems, machine learning applications, and automation solutions.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">Various Tech Stack</span>
-                            </div>
-                            <a href="https://github.com/yourusername/your-project" target="_blank" class="px-4 py-2 bg-pink-500/20 hover:bg-pink-500/40 text-pink-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+            <!-- Projects Grid -->
+            <div class="space-y-16">
+                
+                <!-- Project 1: Autonomous Robot -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-3xl font-bold text-cyan-300 mb-4">Autonomous Robot</h3>
+                        <p class="text-gray-300 text-base mb-6 leading-relaxed">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making. A comprehensive robotics solution combining computer vision, path planning, and real-time control systems.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/yourusername/autonomous-robot" target="_blank" class="px-6 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold">View Code</a>
+                            <a href="https://github.com/yourusername/autonomous-robot" target="_blank" class="px-6 py-2 border border-cyan-500/40 hover:border-cyan-500 text-cyan-300 rounded-lg transition font-semibold">Live Demo</a>
                         </div>
                     </div>
-
-                    <!-- Project 1: Autonomous Robot -->
-                    <div class="carousel-item flex-shrink-0 w-full px-4">
-                        <div class="bg-gray-800/50 rounded-lg p-8 border border-cyan-400/30 hover:border-cyan-400/60 transition-all">
-                            <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg mb-4 w-full h-64 object-cover border border-cyan-400/50">
-                            <h3 class="text-2xl font-bold text-cyan-300 mb-3">Autonomous Robot</h3>
-                            <p class="text-gray-300 text-sm mb-4">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making.</p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
-                            </div>
-                            <!-- GitHub Link Option (Current) -->
-                            <a href="https://github.com/yourusername/autonomous-robot" target="_blank" class="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
-                            <!-- 
-                            Alternative: Modal/Expansion for projects without GitHub
-                            Uncomment below and comment out the GitHub link above to use expansion feature
-                            <button onclick="toggleProjectDetails('project1')" class="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold text-sm">Learn More →</button>
-                            <div id="project1-details" class="hidden mt-4 p-4 bg-gray-900/50 rounded-lg border border-cyan-400/20">
-                                <h4 class="text-lg font-bold text-cyan-300 mb-2">Project Details</h4>
-                                <p class="text-gray-300 text-sm mb-2">Add your detailed project description here. This can include:</p>
-                                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
-                                    <li>Technical implementation details</li>
-                                    <li>Challenges faced and solutions</li>
-                                    <li>Results and achievements</li>
-                                    <li>Future improvements planned</li>
-                                </ul>
-                                <p class="text-gray-400 text-xs italic">Perfect for projects without a GitHub repository.</p>
-                            </div>
-                            -->
-                        </div>
+                    <div class="order-1 md:order-2">
+                        <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg w-full h-80 object-cover border border-cyan-400/30 hover:border-cyan-400/60 transition-all">
                     </div>
+                </div>
 
-                    <!-- Project 2: Vision Mouse -->
-                    <div class="carousel-item flex-shrink-0 w-full px-4">
-                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all">
-                            <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded-lg mb-4 w-full h-64 object-cover border border-blue-400/50">
-                            <h3 class="text-xl font-bold text-blue-300 mb-2">Vision Mouse</h3>
-                            <p class="text-gray-300 text-sm mb-4">Eye-tracking powered cursor control with automatic calibration. No manual tuning required—just look and control.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">MediaPipe</span>
-                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Python</span>
-                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">OpenCV</span>
-                            </div>
-                            <!-- GitHub Link -->
-                            <a href="https://github.com/yourusername/vision-mouse" target="_blank" class="px-4 py-2 bg-blue-500/20 hover:bg-blue-500/40 text-blue-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
-                            <!-- Alternative: <button onclick="toggleProjectDetails('project2')">Learn More →</button> + details div (see Project 1 for example) -->
-                        </div>
+                <!-- Project 2: Vision Mouse -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-1">
+                        <img src="assets/images/vision_mouse.png" alt="Vision Mouse" class="rounded-lg w-full h-80 object-cover border border-blue-400/30 hover:border-blue-400/60 transition-all">
                     </div>
-
-                    <!-- Project 3: Weather Collector -->
-                    <div class="carousel-item flex-shrink-0 w-full px-4">
-                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all">
-                            <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded-lg mb-4 w-full h-64 object-cover border border-purple-400/50">
-                            <h3 class="text-xl font-bold text-purple-300 mb-2">Weather Collector</h3>
-                            <p class="text-gray-300 text-sm mb-4">IoT weather station powered by CyberPi. Real-time sensor data collection, cloud integration, and environmental monitoring.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">CyberPi</span>
-                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">IoT</span>
-                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Sensors</span>
-                            </div>
-                            <!-- GitHub Link -->
-                            <a href="https://github.com/yourusername/weather-collector" target="_blank" class="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
-                            <!-- Alternative: <button onclick="toggleProjectDetails('project3')">Learn More →</button> + details div (see Project 1 for example) -->
+                    <div class="order-2">
+                        <h3 class="text-3xl font-bold text-blue-300 mb-4">Vision Mouse</h3>
+                        <p class="text-gray-300 text-base mb-6 leading-relaxed">Eye-tracking powered cursor control with automatic calibration. No manual tuning required—just look and control. Uses advanced computer vision to track eye movements and translate them into precise cursor positioning for accessibility and innovative interaction.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">MediaPipe</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Python</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">OpenCV</span>
                         </div>
-                    </div>
-
-                    <!-- Project 4 (placeholder) -->
-                    <div class="carousel-item flex-shrink-0 w-full px-4">
-                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-pink-400/30 hover:border-pink-400/60 transition-all">
-                            <img src="assets/images/me.jpg" alt="Additional Project" class="rounded-lg mb-4 w-full h-64 object-cover border border-pink-400/50">
-                            <h3 class="text-xl font-bold text-pink-300 mb-2">More Projects</h3>
-                            <p class="text-gray-300 text-sm mb-4">Explore additional projects including embedded systems, machine learning applications, and automation solutions.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">Various Tech Stack</span>
-                            </div>
-                            <!-- Replace with your project's GitHub link -->
-                            <a href="https://github.com/yourusername/your-project" target="_blank" class="px-4 py-2 bg-pink-500/20 hover:bg-pink-500/40 text-pink-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
-                            <!-- Alternative: <button onclick="toggleProjectDetails('project4')">Learn More →</button> + details div (see Project 1 for example) -->
-                        </div>
-                    </div>
-
-                    <!-- Clone of first project (for infinite loop) -->
-                    <div class="carousel-item flex-shrink-0 w-full px-4">
-                        <div class="bg-gray-800/30 backdrop-blur rounded-lg p-8 border border-cyan-400/30 hover:border-cyan-400/60 transition-all">
-                            <img src="assets/images/me.jpg" alt="Autonomous Robot" class="rounded-lg mb-4 w-full h-64 object-cover border border-cyan-400/50">
-                            <h3 class="text-xl font-bold text-cyan-300 mb-2">Autonomous Robot</h3>
-                            <p class="text-gray-300 text-sm mb-4">Navigates routes autonomously, detects bus stops, follows traffic lights, and performs complex environmental sensing and decision-making.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Python</span>
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Computer Vision</span>
-                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Robotics</span>
-                            </div>
-                            <a href="https://github.com/yourusername/autonomous-robot" target="_blank" class="px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 rounded-lg transition font-semibold text-sm inline-block">Learn More →</a>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/yourusername/vision-mouse" target="_blank" class="px-6 py-2 bg-blue-500/20 hover:bg-blue-500/40 text-blue-300 rounded-lg transition font-semibold">View Code</a>
+                            <a href="https://github.com/yourusername/vision-mouse" target="_blank" class="px-6 py-2 border border-blue-500/40 hover:border-blue-500 text-blue-300 rounded-lg transition font-semibold">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Navigation Arrows -->
-                <button id="projectsPrevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/80 hover:bg-cyan-400 text-black p-2 rounded-r-lg transition hidden md:block">
-                    ❮
-                </button>
-                <button id="projectsNextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/80 hover:bg-cyan-400 text-black p-2 rounded-l-lg transition hidden md:block">
-                    ❯
-                </button>
-
-                <!-- Carousel Dots -->
-                <div class="flex justify-center gap-3 mt-8">
-                    <button class="carousel-dot-projects active" data-index="0"></button>
-                    <button class="carousel-dot-projects" data-index="1"></button>
-                    <button class="carousel-dot-projects" data-index="2"></button>
-                    <button class="carousel-dot-projects" data-index="3"></button>
+                <!-- Project 3: Weather Collector -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-3xl font-bold text-purple-300 mb-4">Weather Collector</h3>
+                        <p class="text-gray-300 text-base mb-6 leading-relaxed">IoT weather station powered by CyberPi. Real-time sensor data collection, cloud integration, and environmental monitoring. A fully functional weather monitoring system that collects temperature, humidity, and atmospheric data for analysis and visualization.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">CyberPi</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">IoT</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">Sensors</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/yourusername/weather-collector" target="_blank" class="px-6 py-2 bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 rounded-lg transition font-semibold">View Code</a>
+                            <a href="https://github.com/yourusername/weather-collector" target="_blank" class="px-6 py-2 border border-purple-500/40 hover:border-purple-500 text-purple-300 rounded-lg transition font-semibold">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="assets/images/weather_collector.png" alt="Weather Collector" class="rounded-lg w-full h-80 object-cover border border-purple-400/30 hover:border-purple-400/60 transition-all">
+                    </div>
                 </div>
+
             </div>
 
             <!-- View All Projects Button -->
-            <div class="text-center mt-12">
+            <div class="text-center mt-16">
                 <a href="projects.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 inline-block">
                     View All Projects →
                 </a>
@@ -508,24 +427,6 @@
         </div>
     </section>
 
-    <!-- 
-    ==========================================
-    CALL TO ACTION SECTION
-    Encourages visitor interaction and collaboration
-    Links to contact page for inquiries
-    ==========================================
-    -->
-    <section class="py-20 px-6 relative overflow-hidden">
-        <div class="max-w-2xl mx-auto glass-effect rounded-xl p-12 text-center hover:shadow-cyan-500/30 transition-all duration-300 animate-fade-in-up">
-            <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Let's Work Together</h2>
-            <p class="text-gray-200 mb-6 text-lg">
-                Interested in collaborating on a project? I'd love to hear about your ideas and how I can help bring them to life.
-            </p>
-            <a href="contact.html" class="px-10 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 inline-block">
-                Get In Touch
-            </a>
-        </div>
-    </section>
 
     <!-- 
     ==========================================
@@ -957,10 +858,12 @@
         let projectsAutoAdvanceInterval;
         let projectsTouchStartX = 0;
         let projectsTouchEndX = 0;
+        let projectsHasInteracted = false; // Track if carousel has been interacted with
 
-        function updateProjectsCarousel(immediate = false) {
+        function updateProjectsCarousel(immediate = false, applyDimming = true) {
             // Updates projects carousel position and card visibility states
             // immediate = true skips transition for seamless infinite loop wraparound
+            // applyDimming = false skips dimming on initial load
             const itemWidth = projectsCarouselItems[0].offsetWidth;
             const offset = -currentProjectSlide * itemWidth;
             
@@ -976,20 +879,35 @@
                 projectsCarouselTrack.style.transform = `translateX(${offset}px)`;
             }
             
-            // Update card states
-            projectsCarouselItems.forEach((item, index) => {
-                const cardDiv = item.querySelector('[class*="bg-gray"]');
-                if (index === currentProjectSlide) {
-                    // Active card - full visibility
-                    item.classList.remove('opacity-40', 'scale-75', 'blur-sm');
-                    item.classList.add('opacity-100', 'scale-100');
-                    if (cardDiv) cardDiv.classList.remove('blur-sm');
-                } else {
-                    // Background cards - dimmed and scaled
-                    item.classList.add('opacity-40', 'scale-75', 'blur-sm');
-                    item.classList.remove('opacity-100', 'scale-100');
-                }
-            });
+            // Update card states - only apply dimming if carousel has been interacted with
+            if (applyDimming) {
+                projectsCarouselItems.forEach((item, index) => {
+                    const cardDiv = item.querySelector('[class*="bg-gray"]');
+                    if (index === currentProjectSlide) {
+                        // Active card - full visibility
+                        item.classList.remove('opacity-40', 'scale-75', 'blur-sm');
+                        item.classList.add('opacity-100', 'scale-100');
+                        if (cardDiv) cardDiv.classList.remove('blur-sm');
+                    } else {
+                        // Background cards - dimmed and scaled (only during interaction)
+                        item.classList.add('opacity-40', 'scale-75', 'blur-sm');
+                        item.classList.remove('opacity-100', 'scale-100');
+                    }
+                });
+            } else {
+                // Initial state - all cards hidden except active one
+                projectsCarouselItems.forEach((item, index) => {
+                    const cardDiv = item.querySelector('[class*="bg-gray"]');
+                    if (index === currentProjectSlide) {
+                        item.classList.add('opacity-100', 'scale-100');
+                        item.classList.remove('opacity-40', 'scale-75', 'blur-sm');
+                        if (cardDiv) cardDiv.classList.remove('blur-sm');
+                    } else {
+                        item.classList.remove('opacity-100', 'scale-100');
+                        item.classList.remove('opacity-40', 'scale-75', 'blur-sm');
+                    }
+                });
+            }
             
             // Update dots
             const actualIndex = (currentProjectSlide - 1 + projectsTotalItems) % projectsTotalItems;
@@ -999,31 +917,16 @@
         }
 
         function nextProjectSlide() {
-            // Advance carousel to next project item
+            // Advance carousel to next project item (one-direction loop)
+            projectsHasInteracted = true; // Mark that user/auto-advance has interacted
             currentProjectSlide++;
-            updateProjectsCarousel();
+            updateProjectsCarousel(false, true); // false=not immediate, true=apply dimming
             
-            // Check if reached end clone and jump to first real item
+            // Check if reached end clone and jump to first real item seamlessly
             if (currentProjectSlide > projectsTotalItems) {
                 setTimeout(() => {
                     currentProjectSlide = 1;
-                    updateProjectsCarousel(true);
-                }, 600);
-            }
-            
-            resetProjectsAutoAdvance();
-        }
-
-        function prevProjectSlide() {
-            // Move carousel to previous project item
-            currentProjectSlide--;
-            updateProjectsCarousel();
-            
-            // Check if went before first real item and jump to last real item
-            if (currentProjectSlide < 1) {
-                setTimeout(() => {
-                    currentProjectSlide = projectsTotalItems;
-                    updateProjectsCarousel(true);
+                    updateProjectsCarousel(true, true); // true=immediate (no animation), true=apply dimming
                 }, 600);
             }
             
@@ -1032,8 +935,9 @@
 
         function goToProjectSlide(index) {
             // Jump directly to a specific project via dot navigation
+            projectsHasInteracted = true; // Mark that user has interacted
             currentProjectSlide = index + 1; // +1 because of clone at start
-            updateProjectsCarousel();
+            updateProjectsCarousel(false, true); // false=not immediate, true=apply dimming
             resetProjectsAutoAdvance();
         }
 
@@ -1055,6 +959,9 @@
         // Auto-advance, pause on hover, button clicks, dot navigation
         // Keyboard support (← →), touch/swipe support
         // ============================================================
+        // Initialize carousel with first card at full width (no dimming)
+        updateProjectsCarousel(false, false);
+        
         // Auto-advance
         startProjectsAutoAdvance();
 
@@ -1062,8 +969,8 @@
         projectsCarouselTrack.addEventListener('mouseenter', () => clearInterval(projectsAutoAdvanceInterval));
         projectsCarouselTrack.addEventListener('mouseleave', startProjectsAutoAdvance);
 
-        // Button clicks
-        projectsPrevBtn.addEventListener('click', prevProjectSlide);
+        // Button clicks - both buttons advance forward (one-direction loop)
+        projectsPrevBtn.addEventListener('click', nextProjectSlide);
         projectsNextBtn.addEventListener('click', nextProjectSlide);
 
         // Dot clicks
@@ -1073,13 +980,13 @@
             });
         });
 
-        // Keyboard navigation (Arrow keys)
+        // Keyboard navigation (Arrow keys - both directions move forward)
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevProjectSlide();
+            if (e.key === 'ArrowLeft') nextProjectSlide();
             if (e.key === 'ArrowRight') nextProjectSlide();
         });
 
-        // Touch/Swipe support (mobile devices)
+        // Touch/Swipe support (mobile devices - both directions move forward)
         projectsCarouselTrack.addEventListener('touchstart', (e) => {
             projectsTouchStartX = e.changedTouches[0].screenX;
         });
@@ -1090,16 +997,13 @@
         });
 
         function handleProjectsSwipe() {
-            // Calculates swipe direction and distance for projects carousel
+            // Calculates swipe direction for projects carousel (one-direction loop)
             const swipeThreshold = 50;
             const diff = projectsTouchStartX - projectsTouchEndX;
             
             if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextProjectSlide();
-                } else {
-                    prevProjectSlide();
-                }
+                // Both swipe directions move forward for one-direction loop
+                nextProjectSlide();
             }
         }
 
