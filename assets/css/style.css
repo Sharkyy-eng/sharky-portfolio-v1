@@ -770,3 +770,188 @@ Background items appear dimmed and scaled behind active card
 .carousel-dot-projects:hover {
     background-color: rgba(34, 211, 238, 0.8);
 }
+
+/* 
+===============================================
+LEGO BUILDING ANIMATION FOR HERO SECTION
+Progressive build-up effect resembling LEGO bricks
+Each element appears with a sliding, stacking animation
+Staggered delays create sequential building effect
+===============================================
+*/
+@keyframes legoSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes legoBrick {
+    0% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes legoPopIn {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-5deg);
+    }
+    70% {
+        transform: scale(1.1) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.lego-build-animation {
+    animation: legoSlideUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    opacity: 0;
+}
+
+.lego-brick-animation {
+    animation: legoBrick 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.lego-pop-animation {
+    animation: legoPopIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    opacity: 0;
+}
+
+/* Stagger delays for sequential building */
+.lego-delay-1 { animation-delay: 0.2s; }
+.lego-delay-2 { animation-delay: 0.4s; }
+.lego-delay-3 { animation-delay: 0.6s; }
+.lego-delay-4 { animation-delay: 0.8s; }
+
+/* 
+===============================================
+LOADING SCREEN ANIMATIONS
+Custom loader with spinning rings
+===============================================
+*/
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 2s linear infinite;
+}
+
+/* 
+===============================================
+LIKE BUTTON ANIMATIONS
+Floating hearts and wiggle effects
+===============================================
+*/
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) translateX(var(--randomX)) scale(0.5);
+    }
+}
+
+.animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+#likeIcon.liked {
+    animation: heartBeat 0.5s ease-in-out;
+    color: #ef4444;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1.1); }
+    75% { transform: scale(1.2); }
+}
+
+/* 
+===============================================
+PARALLAX EFFECTS
+Smooth depth-based scrolling for layered elements
+===============================================
+*/
+.parallax-section {
+    position: relative;
+    will-change: transform;
+}
+
+.parallax-element,
+.parallax-bg {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* 
+===============================================
+TERMINAL-STYLE ABOUT SECTION
+Classic terminal interface with typing animation
+===============================================
+*/
+.terminal-container {
+    box-shadow: 0 10px 50px rgba(6, 182, 212, 0.2);
+}
+
+.terminal-body {
+    background: #1a1a1a;
+    min-height: 400px;
+    color: #00ff00;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+}
+
+.terminal-cursor {
+    animation: blink 1s infinite;
+    color: #00ff00;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+.terminal-text {
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+.terminal-command {
+    color: #22d3ee;
+}
+
+.terminal-output {
+    color: #a3e635;
+}

@@ -2,6 +2,7 @@
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
+let mouse = { x: null, y: null, radius: 150 };
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -10,15 +11,88 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
+// Track mouse position for particle interactions
+document.addEventListener('mousemove', function(event) {
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+});
+
+document.addEventListener('mouseleave', function() {
+    mouse.x = null;
+    mouse.y = null;
+});
+
 // Create particles
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 2 + 1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.dx = (Math.random() - 0.5) * 0.5;
+        this.dy = (Math.random() - 0.5) * 0.5;
+        this.density = (Math.random() * 30) + 1;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    update() {
+        // Mouse interaction - particles move away from cursor
+        if (mouse.x != null && mouse.y != null) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < mouse.radius && distance > 0) {
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let force = (mouse.radius - distance) / mouse.radius;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                this.x -= directionX;
+                this.y -= directionY;
+            } else {
+                // Return to base position
+                if (this.x !== this.baseX) {
+                    let dx = this.x - this.baseX;
+                    this.x -= dx / 10;
+                }
+                if (this.y !== this.baseY) {
+                    let dy = this.y - this.baseY;
+                    this.y -= dy / 10;
+                }
+            }
+        } else {
+            // Return to base position
+            if (this.x !== this.baseX) {
+                let dx = this.x - this.baseX;
+                this.x -= dx / 10;
+            }
+            if (this.y !== this.baseY) {
+                let dy = this.y - this.baseY;
+                this.y -= dy / 10;
+            }
+        }
+
+        // Base movement
+        this.baseX += this.dx;
+        this.baseY += this.dy;
+
+        // Bounce off edges
+        if (this.baseX < 0 || this.baseX > canvas.width) this.dx *= -1;
+        if (this.baseY < 0 || this.baseY > canvas.height) this.dy *= -1;
+    }
+}
+
+// Initialize particles
 for (let i = 0; i < 80; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-    });
+    particles.push(new Particle());
 }
 
 function drawParticles() {
@@ -31,14 +105,8 @@ function drawParticles() {
     ctx.fillStyle = isDarkMode ? '#0ff' : '#06b6d4';
     
     particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        p.update();
+        p.draw();
     });
     requestAnimationFrame(drawParticles);
 }
@@ -50,6 +118,7 @@ function initThemeToggle() {
     const sunIcon = document.getElementById('sunIcon');
     const moonIcon = document.getElementById('moonIcon');
     const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (!themeToggle || !sunIcon || !moonIcon) return; // Exit early if toggle is not on this page
     
     // Apply initial theme immediately
     applyTheme(savedTheme);
@@ -126,11 +195,210 @@ function initActiveNav() {
     });
 }
 
+// ============ SMOOTH SCROLL FOR ANCHOR LINKS ============
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// ============ LEGO BUILDING ANIMATION FOR HERO SECTION ============
+function initLegoAnimation() {
+    // Only run on index.html
+    const heroSection = document.getElementById('hero');
+    if (!heroSection) return;
+    
+    // Check if animation has already been shown
+    const hasSeenAnimation = sessionStorage.getItem('heroLegoAnimationShown');
+    if (hasSeenAnimation) return;
+    
+    // Mark animation as shown for this session
+    sessionStorage.setItem('heroLegoAnimationShown', 'true');
+    
+    // Get hero elements
+    const profileImg = heroSection.querySelector('img');
+    const nameText = document.getElementById('nameText');
+    const descText = document.getElementById('descText');
+    const heroButtons = document.getElementById('heroButtons');
+    
+    // Hide elements initially
+    if (profileImg) profileImg.style.opacity = '0';
+    if (nameText) nameText.style.opacity = '0';
+    if (descText) descText.style.opacity = '0';
+    if (heroButtons) heroButtons.style.opacity = '0';
+    
+    // Apply LEGO animations with staggered timing
+    setTimeout(() => {
+        if (profileImg) {
+            profileImg.classList.add('lego-pop-animation', 'lego-delay-1');
+        }
+    }, 100);
+    
+    setTimeout(() => {
+        if (nameText) {
+            nameText.classList.add('lego-build-animation', 'lego-delay-2');
+        }
+    }, 300);
+    
+    setTimeout(() => {
+        if (descText) {
+            descText.classList.add('lego-build-animation', 'lego-delay-3');
+        }
+    }, 500);
+    
+    setTimeout(() => {
+        if (heroButtons) {
+            heroButtons.classList.add('lego-pop-animation', 'lego-delay-4');
+        }
+    }, 700);
+}
+
+// ============ PARALLAX SCROLLING ============
+function initParallax() {
+    const parallaxElements = document.querySelectorAll('.parallax-element, .parallax-bg');
+    
+    if (parallaxElements.length === 0) return;
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const speed = element.getAttribute('data-speed') || 0.5;
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+}
+
+// ============ LOADING SCREEN ============
+function initLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (!loadingScreen) return;
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.3s ease-out';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 300);
+        }, 200); // Show loading screen for only 200ms
+    });
+}
+
+// ============ TERMINAL TYPING ANIMATION ============
+function initTerminalTyping() {
+    const terminalOutput = document.getElementById('terminalOutput');
+    const terminalPrompt = document.getElementById('terminalPrompt');
+    
+    if (!terminalOutput) return;
+    
+    const terminalContent = [
+        { type: 'command', text: 'PS C:\\Users\\Sharky> whoami', delay: 0 },
+        { type: 'output', text: 'Sharavanan Mathivanan', delay: 60 },
+        { type: 'text', text: '', delay: 40 },
+        { type: 'command', text: 'PS C:\\Users\\Sharky> cat .\\about_me.txt', delay: 60 },
+        { type: 'text', text: '', delay: 40 },
+        { type: 'text', text: '--- WHO I AM ---', delay: 35 },
+        { type: 'text', text: 'Mechatronics & AI Systems Engineering @ Western University.', delay: 35 },
+        { type: 'text', text: 'I bridge mechanical systems with intelligent software to solve real-world problems.', delay: 35 },
+        { type: 'text', text: '', delay: 40 },
+        { type: 'text', text: '--- MY JOURNEY ---', delay: 35 },
+        { type: 'text', text: 'Early curiosity in mechanics + AI turned into building robots and computer vision systems.', delay: 35 },
+        { type: 'text', text: 'I ship ideas end-to-end: from hardware prototypes to production-ready software.', delay: 35 },
+        { type: 'text', text: 'Motivated by creating tech that works outside the lab and helps people.', delay: 35 },
+        { type: 'text', text: '', delay: 40 },
+        { type: 'text', text: '--- WHAT I DO ---', delay: 35 },
+        { type: 'text', text: 'Robotics, automation, computer vision, embedded/IoT, and full-stack tooling.', delay: 35 },
+        { type: 'text', text: 'Love designing autonomous systems that sense, decide, and act reliably.', delay: 35 },
+        { type: 'text', text: '', delay: 40 },
+        { type: 'text', text: '--- TOOLBOX ---', delay: 35 },
+        { type: 'text', text: 'Python, C++, Java, JavaScript; control, CV/ML; CAD; embedded + cloud.', delay: 35 },
+        { type: 'text', text: '', delay: 40 },
+        { type: 'text', text: '--- PHILOSOPHY ---', delay: 35 },
+        { type: 'text', text: 'Engineering thoughts into reality, one project at a time.', delay: 35 },
+        { type: 'text', text: '', delay: 50 },
+        { type: 'success', text: 'PS C:\\Users\\Sharky> _', delay: 120 }
+    ];
+    
+    let currentLine = 0;
+    let currentChar = 0;
+    let currentElement = null;
+    
+    function typeNextChar() {
+        if (currentLine >= terminalContent.length) {
+            // Show prompt when done
+            if (terminalPrompt) {
+                terminalPrompt.style.display = 'block';
+            }
+            return;
+        }
+        
+        const line = terminalContent[currentLine];
+        
+        // Create new line element if needed
+        if (currentChar === 0) {
+            currentElement = document.createElement('div');
+            currentElement.className = 'terminal-line';
+            
+            if (line.type === 'command') {
+                currentElement.innerHTML = `<span class="text-yellow-400 font-bold"></span>`;
+            } else if (line.type === 'output') {
+                currentElement.innerHTML = `<span class="text-green-400"></span>`;
+            } else if (line.type === 'header') {
+                currentElement.innerHTML = `<span class="text-cyan-400"></span>`;
+            } else if (line.type === 'success') {
+                currentElement.innerHTML = `<span class="text-green-400"></span>`;
+            } else {
+                currentElement.innerHTML = `<span class="text-gray-300"></span>`;
+            }
+            
+            terminalOutput.appendChild(currentElement);
+        }
+        
+        // Type next character
+        if (currentChar < line.text.length) {
+            const span = currentElement.querySelector('span');
+            if (span) {
+                span.textContent += line.text[currentChar];
+            }
+            currentChar++;
+            setTimeout(typeNextChar, 30); // Slower typing speed - 50ms between characters
+        } else {
+            // Move to next line
+            currentLine++;
+            currentChar = 0;
+            currentElement = null;
+            setTimeout(typeNextChar, line.delay);
+        }
+    }
+    
+    // Start typing immediately
+    typeNextChar();
+}
+
 // Initialize all features on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initScrollReveal();
     initActiveNav();
+    initSmoothScroll();
+    initLegoAnimation();
+    initParallax();
+    initLoadingScreen();
+    initTerminalTyping();
 });
 
 function getProjectsData() {
@@ -183,19 +451,27 @@ function createProjectCard(project, idx) {
 // Pop-up logic
 function showPopup(idx) {
     const p = window.projects[idx];
+    const popupModal = document.getElementById('popupModal');
+    if (!popupModal) return;
     document.getElementById('popupGif').src = p.image;
     document.getElementById('popupTitle').textContent = p.name;
     document.getElementById('popupDesc').textContent = p.desc;
-    document.getElementById('popupModal').style.display = 'flex';
+    popupModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
 function closePopup() {
-    document.getElementById('popupModal').style.display = 'none';
+    const popupModal = document.getElementById('popupModal');
+    if (!popupModal) return;
+    popupModal.style.display = 'none';
     document.body.style.overflow = '';
 }
-document.getElementById('popupModal').addEventListener('click', function(e) {
-    if (e.target === this) closePopup();
-});
+
+const popupModalEl = document.getElementById('popupModal');
+if (popupModalEl) {
+    popupModalEl.addEventListener('click', function(e) {
+        if (e.target === this) closePopup();
+    });
+}
 
 // // Animated Stats
 // function animateStat(id, end, duration = 1200) {
@@ -221,6 +497,7 @@ document.getElementById('popupModal').addEventListener('click', function(e) {
 // Tech Info Collection
 function getTechInfo() {
     const techDetails = document.getElementById('techDetails');
+    if (!techDetails) return;
     // Browser info
     const browser = navigator.userAgent;
     // Platform
@@ -255,19 +532,21 @@ window.addEventListener('DOMContentLoaded', getTechInfo);
 // Show/hide tech info on hover/focus
 const techTrigger = document.getElementById('techInfo-trigger');
 const techInfo = document.getElementById('techInfo');
-techTrigger.addEventListener('mouseenter', () => {
-    techInfo.style.opacity = '1';
-    techInfo.style.pointerEvents = 'auto';
-});
-techTrigger.addEventListener('mouseleave', () => {
-    techInfo.style.opacity = '0';
-    techInfo.style.pointerEvents = 'none';
-});
-techInfo.addEventListener('mouseenter', () => {
-    techInfo.style.opacity = '1';
-    techInfo.style.pointerEvents = 'auto';
-});
-techInfo.addEventListener('mouseleave', () => {
-    techInfo.style.opacity = '0';
-    techInfo.style.pointerEvents = 'none';
-});
+if (techTrigger && techInfo) {
+    techTrigger.addEventListener('mouseenter', () => {
+        techInfo.style.opacity = '1';
+        techInfo.style.pointerEvents = 'auto';
+    });
+    techTrigger.addEventListener('mouseleave', () => {
+        techInfo.style.opacity = '0';
+        techInfo.style.pointerEvents = 'none';
+    });
+    techInfo.addEventListener('mouseenter', () => {
+        techInfo.style.opacity = '1';
+        techInfo.style.pointerEvents = 'auto';
+    });
+    techInfo.addEventListener('mouseleave', () => {
+        techInfo.style.opacity = '0';
+        techInfo.style.pointerEvents = 'none';
+    });
+}
