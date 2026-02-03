@@ -294,7 +294,7 @@ function initLoadingScreen() {
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
             }, 300);
-        }, 200); // Show loading screen for only 200ms
+        }, 200); // Show loading screen for 200ms (total 500ms with fade-out)
     });
 }
 
